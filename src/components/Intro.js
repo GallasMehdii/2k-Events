@@ -1,44 +1,51 @@
 import React, { useState } from 'react';
-import img from '../images/t.PNG';
 import im2 from '../images/t2.PNG';
 
 import { Link } from 'react-router-dom';
 
 const Intro = () => {
-    // Mock data for gallery - replace with your actual images
     const galleryImages = [
-        { src: img, caption: 'Elegant Ceremonies' },
+        { src: 'https://res.cloudinary.com/dx5y2bzdq/image/upload/v1738680325/eyoel-kahssay--dGz-vOscYQ-unsplash_umvd23.jpg', caption: 'Elegant Ceremonies' },
         { src: im2, caption: 'Perfect Venues' },
-        { src: img, caption: 'Beautiful Decorations' },
-        { src: img, caption: 'Memorable Moments' },
+        { src: 'https://res.cloudinary.com/dx5y2bzdq/image/upload/v1738680325/eyoel-kahssay--dGz-vOscYQ-unsplash_umvd23.jpg', caption: 'Beautiful Decorations' },
+        { src: 'https://res.cloudinary.com/dx5y2bzdq/image/upload/v1738680244/kai-nachtigal-tYzZnD-b3x4-unsplash_shxxuh.jpg', caption: 'Memorable Moments' },
     ];
-
     const [activeImage, setActiveImage] = useState(0);
+    const [isTransitioning, setIsTransitioning] = useState(false);
+
+    const changeImage = (newIndex) => {
+        if (isTransitioning) return;
+        
+        setIsTransitioning(true);
+            setActiveImage(newIndex);
+            setIsTransitioning(false);
+    };
 
     const nextImage = () => {
-        setActiveImage((prev) => (prev + 1) % galleryImages.length);
+        const newIndex = (activeImage + 1) % galleryImages.length;
+        changeImage(newIndex);
     };
 
     const prevImage = () => {
-        setActiveImage((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+        const newIndex = (activeImage - 1 + galleryImages.length) % galleryImages.length;
+        changeImage(newIndex);
     };
 
     return (
         <section className="bg-gradient-to-b from-gray-50 to-white" id="about">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
                 <div className="flex flex-col lg:flex-row items-center gap-12" data-aos="fade-up">
-                    {/* Enhanced Image Container */}
                     <div className="lg:w-1/2">
                         <div className="relative group">
-                            {/* Main Image Display */}
                             <div className="relative overflow-hidden rounded-lg shadow-2xl">
                                 <div className="absolute -inset-4 bg-gray-100 rounded-lg opacity-50 blur"></div>
                                 <img 
                                     src={galleryImages[activeImage].src} 
                                     alt={galleryImages[activeImage].caption}
-                                    className="relative w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
+                                    className={`relative w-full h-[500px] object-contain transition-opacity duration-300 ${
+                                        isTransitioning ? 'opacity-0' : 'opacity-100'
+                                    }`}
                                 />
-                                
                                 {/* Navigation Arrows */}
                                 <button 
                                  onClick={prevImage}

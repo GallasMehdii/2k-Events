@@ -196,7 +196,7 @@ const Services = () => {
                 <section data-aos="zoom-in-down">
                     {/* Header Section */}
                     <div className="my-4 py-4">
-                        <h2 className="my-2 text-center text-3xl text-gray-800 font-serif">
+                        <h2 className="my-2 text-center text-4xl text-gray-800 font-serif">
                             Our Professional Services
                         </h2>
                         <div className="flex justify-center">
