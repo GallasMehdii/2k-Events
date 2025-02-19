@@ -1,21 +1,24 @@
 import React from 'react';
 import { HashLink } from 'react-router-hash-link';
+import { useTranslation } from 'react-i18next'; // Import translation hook
 
 const NavLinks = () => {
+    const { t } = useTranslation(); // Get translation function
+
     return (
         <>
-            <HashLink className="px-4 font-extrabold text-gray-500 hover:text-blue-900" smooth to="/#about">
-                About
-            </HashLink>
-            <HashLink className="px-4 font-extrabold text-gray-500 hover:text-blue-900" smooth to="/#services">
-                Services
-            </HashLink>
-            <HashLink className="px-4 font-extrabold text-gray-500 hover:text-blue-900" to="/">
-                Portfolio
-            </HashLink>
-            <HashLink className="px-4 font-extrabold text-gray-500 hover:text-blue-900" to="/contact#contact">
-                Contact Us
-            </HashLink>
+           <HashLink className="font-serif text-gray-100 hover:text-white text-xl" smooth to="/#about">
+  {t("About")}
+</HashLink>
+<HashLink className="font-serif text-gray-100 hover:text-white text-xl" smooth to="/#services">
+  {t("Services")}
+</HashLink>
+<HashLink className="font-serif text-gray-100 hover:text-white text-xl" to="/">
+  {t("Portfolio")}
+</HashLink>
+<HashLink className="font-serif text-gray-100 hover:text-white text-xl" to="/contact#contact">
+  {t("Contact Us")}
+</HashLink>
            
         </>
     )

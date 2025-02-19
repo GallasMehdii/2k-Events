@@ -144,15 +144,17 @@ const Services = () => {
     const categories = {
         wedding: [
             { id: 'all', label: 'All Weddings' },
-            { id: 'ceremony', label: 'Ceremonies' },
-            { id: 'reception', label: 'Receptions' },
-            { id: 'luxury', label: 'Luxury' },
+            { id: 'ceremony', label: 'Singapour' },
+            { id: 'reception', label: 'Dolce & Gabana' },
+            { id: 'luxury', label: 'Jungle' },
+            { id: 'Channel Flower', label: 'Channel Flower' },
+
+            
             { id: 'full-service', label: 'Full Service' }
         ],
         corporate: [
             { id: 'all', label: 'All Corporate' },
             { id: 'conference', label: 'Conferences' },
-            { id: 'celebration', label: 'Celebrations' }
         ]
     };
 
@@ -416,15 +418,14 @@ const Services = () => {
                         ))}
                     </div>
 
-                    {/* Call to Action Section */}
-                    <div className="text-center mt-16">
+                    {/* <div className="text-center mt-16">
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                             Every event is unique, and we pride ourselves on delivering personalized experiences that exceed expectations. Our commitment to excellence ensures your special day is nothing short of perfect.
                         </p>
                         <button className="mt-8 bg-gray-800 text-white px-8 py-3 rounded-full hover:bg-gray-700 transition-colors duration-300 shadow-lg hover:shadow-xl">
                             Start Planning Your Event
                         </button>
-                    </div>
+                    </div> */}
                 </section>
             </div>
         </>

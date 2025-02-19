@@ -66,6 +66,8 @@ const Contact = () => {
                 useIcon: true,
                 borderRadius: '12px',
             });
+            setErrors(newErrors);
+            return false; // Stop after the first error
         }
     
         if (!lastName.trim()) {
@@ -81,6 +83,8 @@ const Contact = () => {
                 useIcon: true,
                 borderRadius: '12px',
             });
+            setErrors(newErrors);
+            return false; // Stop after the first error
         }
     
         if (!email.trim()) {
@@ -96,6 +100,8 @@ const Contact = () => {
                 useIcon: true,
                 borderRadius: '12px',
             });
+            setErrors(newErrors);
+            return false; // Stop after the first error
         }
     
         if (!phone.trim()) {
@@ -111,6 +117,8 @@ const Contact = () => {
                 useIcon: true,
                 borderRadius: '12px',
             });
+            setErrors(newErrors);
+            return false; // Stop after the first error
         }
     
         if (!message.trim()) {
@@ -126,6 +134,8 @@ const Contact = () => {
                 useIcon: true,
                 borderRadius: '12px',
             });
+            setErrors(newErrors);
+            return false; // Stop after the first error
         }
     
         if (!selectedDate) {
@@ -141,6 +151,8 @@ const Contact = () => {
                 useIcon: true,
                 borderRadius: '12px',
             });
+            setErrors(newErrors);
+            return false; // Stop after the first error
         }
     
         if (!guestsNumber.trim()) {
@@ -156,6 +168,8 @@ const Contact = () => {
                 useIcon: true,
                 borderRadius: '12px',
             });
+            setErrors(newErrors);
+            return false; // Stop after the first error
         }
     
         if (!venue.trim()) {
@@ -171,6 +185,8 @@ const Contact = () => {
                 useIcon: true,
                 borderRadius: '12px',
             });
+            setErrors(newErrors);
+            return false; // Stop after the first error
         }
     
         if (!eventType) {
@@ -186,10 +202,12 @@ const Contact = () => {
                 useIcon: true,
                 borderRadius: '12px',
             });
+            setErrors(newErrors);
+            return false; // Stop after the first error
         }
     
         setErrors(newErrors);
-        return Object.keys(newErrors).length === 0;
+        return true; // If no errors, return true
     };
     const sendEmail = (e) => {
         e.preventDefault();
@@ -243,7 +261,7 @@ const Contact = () => {
             <div>
                 <NavBar />
             </div>
-            <div className="min-h-screen bg-gradient-to-b from-white to-gray-100">
+            <div className="min-h-screen bg-gray-200 from-white to-gray-100">
                 <div className="container mx-auto px-4 py-16">
                     <div className="max-w-4xl mx-auto">
                         <div className="bg-white rounded-3xl shadow-xl overflow-hidden">

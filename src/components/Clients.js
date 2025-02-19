@@ -9,10 +9,12 @@ import kws from '../images/clients/golden.png';
 import fours from '../images/clients/4s.png';
 import radison from '../images/clients/rad.png';
 import ihg from '../images/clients/ihg.png';
+import porsche from '../images/clients/porsche.png';
 import dubai from '../images/clients/dubai.png';
 import oberoi from '../images/clients/oberoi.png';
 import madeo from '../images/clients/madeo.png';
 import bv from '../images/clients/bv.png';
+import interc from '../images/clients/Interc.png';
 
 const Clients = () => {
   const [hoveredClient, setHoveredClient] = useState(null);
@@ -22,6 +24,11 @@ const Clients = () => {
       src: ihg, 
       alt: 'IHG', 
       description: 'Intercontinental Hotels Group - Global hospitality leader' 
+    },
+    { 
+      src: porsche, 
+      alt: 'porsche', 
+      description: 'Porsche - Luxury car manufacturer' 
     },
     { 
       src: kws, 
@@ -57,6 +64,11 @@ const Clients = () => {
       src: bv, 
       alt: 'BV', 
       description: 'BV Hospitality Group - Global hospitality solutions' 
+    },
+    { 
+      src: interc, 
+      alt: 'interc', 
+      description: 'intercontinental Hotels Group - Global hospitality leader' 
     }
   ];
 
