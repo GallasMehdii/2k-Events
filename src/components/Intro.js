@@ -44,13 +44,13 @@ const Intro = () => {
       src: '  https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto/v1739966268/pors_gockgn.jpg',
     },
     {
-      src: 'https://res.cloudinary.com/dx5y2bzdq/image/upload/v1740223036/porchee_iayr7d.jpg',
+      src: 'https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto/v1740223036/porchee_iayr7d.jpg',
     },
     {
-      src: 'https://res.cloudinary.com/dx5y2bzdq/image/upload/v1740223036/P44_cekoa7.jpg',
+      src: 'https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto/v1740223036/P44_cekoa7.jpg',
     },
     {
-      src: 'https://res.cloudinary.com/dx5y2bzdq/image/upload/v1740223036/p33_gwvs8a.jpg',
+      src: 'https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto/v1740223036/p33_gwvs8a.jpg',
     },
   ];
 

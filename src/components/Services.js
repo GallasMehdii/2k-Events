@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import weddingCeremony from '../images/t.PNG';
-import reception from '../images/t3.PNG';
-import decoration from '../images/t2.PNG';
-import coordination from '../images/t4.PNG';
 import corporateConference from '../images/t4.PNG';
 import corporateCelebration from '../images/t4.PNG';
 import NavBar from './Navbar/NavBar';
+import LoadingSpinner from './LoadingSpinner';
 
 const Services = () => {
     const [selectedService, setSelectedService] = useState(null);
@@ -24,44 +21,113 @@ const Services = () => {
                 "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740226063/DSC03521_exkyyi.jpg",
                 "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740226516/zz_i7t6bz.jpg"
             ],
-            thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740155154/IMG_7427_e7qoa5.jpg",
+            thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740226071/DSC03534_tqnwqw.jpg",
             type: "wedding",
             category: "ceremony"
         },
         {
-            title: "Dolce & Gabana",
-            photos: [reception, weddingCeremony, decoration],
-            thumbnailImage: reception,
-            type: "wedding",
-            category: "reception"
-        },
-        {
-            title: "Jungle",
-            photos: [decoration, reception, coordination],
-            thumbnailImage: decoration,
+            title: "Eden",
+            photos: [
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350223/-113__rrivnl.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350200/-100__xf3iel.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350196/-112__u3rdme.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350196/-112__u3rdme.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350082/-98__pmemdx.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350060/-99__pucegx.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350005/-103__v4gat5.jpg"
+            ],
+            thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350223/-113__rrivnl.jpg",
             type: "wedding",
             category: "luxury"
         },
         {
-            title: "Channel Flower",
-            photos: [coordination, decoration, weddingCeremony],
-            thumbnailImage: coordination,
+            title: "Jungle",
+            photos: [
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350711/6U2A6506_vjbtve.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350708/6U2A6331_mwnj4t.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350692/6U2A6336_kbczno.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350669/6U2A6349_p4yvjg.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350562/6U2A6389_du7zcd.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350616/6U2A6499_wo7l8f.jpg"
+            ],
+            thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350711/6U2A6506_vjbtve.jpg",
+            type: "wedding",
+            category: "jungle"
+        },
+        {
+            title: "Camellia  Flower",
+            photos: [
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740239961/096A5602_chdi7e.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740239954/096A5577_j4x39o.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740239953/096A5622_zsrg84.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740239902/096A7580_u0rrbt.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740239854/096A5586_wurt3g.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740237714/096A5591_l50mrl.jpg"
+            ],
+            thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740239854/096A5586_wurt3g.jpg",
             type: "wedding",
             category: "full-service"
         },
         {
-            title: "Business Conference",
-            photos: [corporateConference, corporateCelebration],
-            thumbnailImage: corporateConference,
-            type: "corporate",
-            category: "conference"
+            title: "Reflection",
+            photos: [
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350918/DSC01682_kw1vf7.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350915/DSC01545_znanob.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350903/DSC01713_t49xsp.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350983/DSC01581_u00pwf.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350915/_86A7357_gyin82.jpg",
+            ],
+            thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350918/DSC01682_kw1vf7.jpg",
+            type: "wedding",
+            category: "reflection"
         },
         {
-            title: "Corporate Gala",
-            photos: [corporateCelebration, corporateConference],
-            thumbnailImage: corporateCelebration,
+            title: "Bvlgari",
+            photos: [
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740348917/DSC09512_ppodvj.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740348887/DSC07995_bfohzx.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740348885/DSC07946_tll1uh.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740348864/DSC08202_r1d7wf.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740348835/DSC07965_shuuwb.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740348826/DSC07931_kmknho.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740348798/DSC07991_tp5u9i.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740348782/DSC09440_e4uxpl.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740348769/DSC08033_rmj5wk.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740348762/DSC08297_frlcim.jpg"
+            ],
+            thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740348769/DSC08033_rmj5wk.jpg",
+            type: "wedding",
+            category: "bvlgari"
+        },
+
+
+        {
+            title: "IHG Event - Arabie Saoudite",
+            photos: [corporateConference, corporateCelebration],
+            thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740354115/a_yrejrq.jpg",
             type: "corporate",
-            category: "celebration"
+            category: "ihg-event"
+        },
+        {
+            title: "IHG Event - Doha",
+            photos: [
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740353876/11-48_xqmn0f.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740353871/11-135_jr2ret.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740353855/11-9_fdjlp1.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740353840/11-101_vdontj.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740353821/11-69_u3yjme.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740353764/11-18_tfjhgi.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740353764/11-6_zmlmig.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740353759/11-71_brtfof.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740353729/11-5_sgzmnr.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740353712/11-49_fsouhk.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740353673/11-39_adiezk.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740353638/11-23_mg9car.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740353605/11-127_jbp4ss.jpg"
+            ],
+            thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740354115/a_yrejrq.jpg",
+            type: "corporate",
+            category: "ihg-event"
         },
         {
             title: "Mosaique",
@@ -78,32 +144,69 @@ const Services = () => {
             thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740155051/1-9_t4rwpc.jpg",
             type: "wedding",
             category: "mosaique"
-        }
+        },
+        {
+            title: "Valley Flower",
+            photos: [
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740352399/--11_oll416.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740352397/--3_ysa7yi.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740352395/DSC09415_krsd2e.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740352364/--42_rkvyxa.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740352350/--6_igndgp.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740352344/--13_pslwnf.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740352343/--27_yhbqht.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740352292/--10_ndru9g.jpg"
+            ],
+            thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740352399/--11_oll416.jpg",
+            type: "wedding",
+            category: "valleyflower"
+        },
+
+        {
+            title: "Shade",
+            photos: [
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740351496/526A1032_afr90p.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740351476/526A1058_lhh4ny.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740351476/526A1067_jg3pep.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740351368/526A2817_f7mkit.jpg"
+            ],
+            thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740351496/526A1032_afr90p.jpg",
+
+            type: "wedding",
+            category: "shade"
+        },
+
     ];
 
     const categories = {
         wedding: [
             { id: 'all', label: 'All Weddings' },
             { id: 'ceremony', label: 'Singapour' },
-            { id: 'reception', label: 'Dolce & Gabana' },
-            { id: 'luxury', label: 'Jungle' },
+            { id: 'luxury', label: 'Eden' },
+            { id: 'jungle', label: 'Jungle' },
+            { id: 'reflection', label: 'Reflection' },
+            { id: 'valleyflower', label: "Valley flower" },
+            { id: 'bvlgari', label: 'Bvlgari' },
             { id: 'mosaique', label: 'Mosaique' },
-            { id: 'Channel Flower', label: 'Channel Flower' },
+            { id: 'full-service', label: 'Camellia Flower' },
+            { id: 'shade', label: 'Shade' }
         ],
         corporate: [
             { id: 'all', label: 'All Corporate' },
-            { id: 'conference', label: 'Conferences' },
+            { id: 'porsche-event', label: 'Porsche Event' },
+            { id: 'ihg-event', label: 'IHG Event' }
         ]
     };
 
+    // When selectedService or currentPhotoIndex changes, reset loading state and preload image
     useEffect(() => {
         if (selectedService) {
+            setLoading(true);
             const img = new Image();
             img.src = selectedService.photos[currentPhotoIndex];
             img.onload = () => setLoading(false);
         }
     }, [currentPhotoIndex, selectedService]);
-
 
     const filteredServices = services.filter(service =>
         service.type === activeType &&
@@ -125,6 +228,7 @@ const Services = () => {
 
     const prevPhoto = (e) => {
         e.stopPropagation();
+        if (loading) return; // Prevent navigation while loading
         setCurrentPhotoIndex((prevIndex) =>
             (prevIndex - 1 + selectedService.photos.length) % selectedService.photos.length
         );
@@ -135,6 +239,7 @@ const Services = () => {
             e.stopPropagation();
             e.preventDefault();
         }
+        if (loading) return; // Prevent navigation while loading
         setCurrentPhotoIndex((prevIndex) =>
             (prevIndex + 1) % selectedService.photos.length
         );
@@ -143,7 +248,6 @@ const Services = () => {
     const navigateModal = (direction, e) => {
         e.stopPropagation();
         const currentIndex = filteredServices.findIndex(s => s.title === selectedService.title);
-
         if (direction === 'prev') {
             const prevIndex = (currentIndex - 1 + filteredServices.length) % filteredServices.length;
             setSelectedService(filteredServices[prevIndex]);
@@ -220,21 +324,20 @@ const Services = () => {
                                     onClick={() => openModal(service)}
                                 >
                                     {/* Image Container */}
-                                    <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] overflow-hidden">                                        <img
-                                        src={service.thumbnailImage}
-                                        srcSet={`${service.thumbnailImage.replace("upload/", "upload/w_400/")} 400w, 
-                                             ${service.thumbnailImage.replace("upload/", "upload/w_800/")} 800w, 
-                                            ${service.thumbnailImage.replace("upload/", "upload/w_1200/")} 1200w`}
-                                        sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
-                                        alt={service.title}
-                                        className="w-full h-full object-cover"
-                                        loading="lazy"
-                                    />
-
+                                    <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] overflow-hidden">
+                                        <img
+                                            src={service.thumbnailImage}
+                                            srcSet={`${service.thumbnailImage.replace("upload/", "upload/w_400/")} 400w, 
+                                                     ${service.thumbnailImage.replace("upload/", "upload/w_800/")} 800w, 
+                                                     ${service.thumbnailImage.replace("upload/", "upload/w_1200/")} 1200w`}
+                                            sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
+                                            alt={service.title}
+                                            className="w-full h-full object-cover"
+                                            loading="lazy"
+                                        />
                                         {/* Gradient Overlay */}
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                                     </div>
-
                                     {/* Title Container */}
                                     <div className="absolute bottom-0 left-0 right-0 p-6">
                                         <h3 className="font-serif text-2xl text-white tracking-wider transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
@@ -258,17 +361,13 @@ const Services = () => {
                         >
                             <div className="relative max-w-7xl max-h-[85vh] p-4 flex justify-center items-center">
                                 {/* Loading State */}
-                                {loading && (
-                                    <div className="absolute inset-0 flex justify-center items-center">
-                                        <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
-                                    </div>
-                                )}
+                                {loading && <LoadingSpinner />}
+
 
                                 <img
                                     src={selectedService.photos[currentPhotoIndex]}
                                     alt={`${selectedService.title} - photo ${currentPhotoIndex + 1}`}
-                                    className={`max-w-full max-h-[85vh] object-contain transition-opacity duration-300 ${loading ? "opacity-0" : "opacity-100"
-                                        }`}
+                                    className={`max-w-full max-h-[85vh] object-contain transition-opacity duration-300 ${loading ? "opacity-0" : "opacity-100"}`}
                                     onLoad={() => setLoading(false)}
                                 />
 
@@ -280,7 +379,7 @@ const Services = () => {
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 setLoading(true);
-                                                prevPhoto();
+                                                prevPhoto(e);
                                             }}
                                         >
                                             <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -297,7 +396,7 @@ const Services = () => {
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 setLoading(true);
-                                                nextPhoto();
+                                                nextPhoto(e);
                                             }}
                                         >
                                             <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -319,8 +418,7 @@ const Services = () => {
                                             key={index}
                                             src={photo}
                                             alt={`Thumbnail ${index + 1}`}
-                                            className={`w-16 h-16 object-cover cursor-pointer border-2 ${currentPhotoIndex === index ? 'border-white' : 'border-transparent'
-                                                }`}
+                                            className={`w-16 h-16 object-cover cursor-pointer border-2 ${currentPhotoIndex === index ? 'border-white' : 'border-transparent'}`}
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 setLoading(true);
@@ -348,8 +446,6 @@ const Services = () => {
                         </div>
                     </div>
                 )}
-
-
             </div>
         </>
     );

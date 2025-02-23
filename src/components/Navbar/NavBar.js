@@ -18,10 +18,10 @@ const NavBar = () => {
 
         {/* Left Navigation */}
         <div className="hidden lg:flex flex-1 space-x-4">
-          <HashLink className="font-normal  text-gray-100 hover:text-white text-xl" smooth to="/#about">
+          <HashLink className="font-serif  text-gray-100 hover:text-white text-xl" smooth to="/#about">
             {language === "en" ? "About" : "À propos"}
           </HashLink>
-          <HashLink className="font-normal text-gray-100 hover:text-white text-xl" smooth to="/#services">
+          <HashLink className="font-serif text-gray-100 hover:text-white text-xl" smooth to="/#services">
             {language === "en" ? "Gallery" : "Galerie"} 
           </HashLink>
         </div>
@@ -35,10 +35,10 @@ const NavBar = () => {
 
         {/* Right Navigation */}
         <div className="hidden lg:flex flex-1 justify-end space-x-4 items-center">
-          <HashLink className="font-normal text-gray-100 hover:text-white text-xl" to="/">
+          <HashLink className="font-serif text-gray-100 hover:text-white text-xl" to="/">
             {language === "en" ? "Portfolio" : "Portfolio"}
           </HashLink>
-          <HashLink className="font-normal text-gray-100 hover:text-white text-xl" to="/contact#contact">
+          <HashLink className="font-serif text-gray-100 hover:text-white text-xl" to="/contact#contact">
             {language === "en" ? "Contact Us" : "Contactez-nous"}
           </HashLink>
 
