@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import NavBar from "../components/Navbar/NavBar";
 
 // Cloudinary image URLs
 const images = [
@@ -18,7 +17,7 @@ const Hero = () => {
   useEffect(() => {
     intervalRef.current = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2500);
+    }, 2000);
 
     return () => clearInterval(intervalRef.current);
   }, []);
@@ -92,7 +91,7 @@ const Hero = () => {
           </span>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-9 sm:space-y-0 sm:space-x-6">
             <Link
               to="/contact"
               className="group relative px-8 py-4 bg-white/10 backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-white/20"
@@ -107,7 +106,7 @@ const Hero = () => {
               className="group relative px-8 py-4 border border-gray-400/30 rounded-full transition-all duration-300 hover:border-gray-400/50"
             >
               <span className="relative z-10 text-gray-300 font-medium tracking-wider group-hover:text-white transition-colors duration-300">
-                Explore Services
+                About Our Agency
               </span>
             </Link>
           </div>

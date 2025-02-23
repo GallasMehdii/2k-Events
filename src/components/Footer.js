@@ -38,7 +38,7 @@ const Footer = () => {
                     <div>
                         <h6 className="text-white font-semibold text-lg mb-3 uppercase">Visit Us</h6>
                         <p className="text-gray-400 text-sm">Dubai,14th Floor ,Blue Bay Tower-Business Bay</p>
-                        <p className="text-gray-400 text-sm mb-3">Tunis, Hay Nasr</p>
+                        <p className="text-gray-400 text-sm mb-3">Tunisie, Ennaser 1 </p>
                         <div className="w-full h-40 md:h-48 rounded-xl overflow-hidden shadow-lg border border-gray-700">
                             <iframe
                                 className="w-full h-full"

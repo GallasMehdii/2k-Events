@@ -7,7 +7,7 @@ const Cta = () => {
                 <div className="w-full flex flex-col lg:flex-row lg:justify-around">
                     <div className="mb-4">
                         <p className='text-2xl md:text-4xl font-thin mb-4 font-thin'>Your Dream Wedding, Curated to Perfection</p>
-                        <p className="text-lg md:text-2xl font-extralight">Experience luxury and elegance like never before. Let us craft a breathtaking celebration that tells your unique story. <span className='font-thin'>together!</span></p>
+                        <p className="text-lg md:text-2xl font-thin">Experience luxury and elegance like never before. Let us craft a breathtaking celebration that tells your unique story. <span className='font-thin'>together!</span></p>
                     </div>
                     
                     <div className="w-full lg:w-72 pt-6 lg:mx-12">
