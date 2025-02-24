@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import corporateConference from '../images/t4.PNG';
-import corporateCelebration from '../images/t4.PNG';
 import NavBar from './Navbar/NavBar';
 import LoadingSpinner from './LoadingSpinner';
 
@@ -30,7 +28,6 @@ const Services = () => {
             photos: [
                 "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350223/-113__rrivnl.jpg",
                 "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350200/-100__xf3iel.jpg",
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350196/-112__u3rdme.jpg",
                 "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350196/-112__u3rdme.jpg",
                 "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350082/-98__pmemdx.jpg",
                 "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350060/-99__pucegx.jpg",
@@ -99,11 +96,20 @@ const Services = () => {
             type: "wedding",
             category: "bvlgari"
         },
-
+        
 
         {
             title: "IHG Event - Arabie Saoudite",
-            photos: [corporateConference, corporateCelebration],
+            photos: [
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740397953/ADY00108_itczh3.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740397956/ADY00251_r07ngh.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740397955/ADY00080_ga4hcf.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740397954/ADY00085_i6i70s.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740397953/ADY00092_zwif0q.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740397952/ADY00111_xwua64.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740398194/ADY00244_dmzzqk.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740398194/ADY00216_ngkaji.jpg"
+            ],
             thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740354115/a_yrejrq.jpg",
             type: "corporate",
             category: "ihg-event"
@@ -245,19 +251,19 @@ const Services = () => {
         );
     };
 
-    const navigateModal = (direction, e) => {
-        e.stopPropagation();
-        const currentIndex = filteredServices.findIndex(s => s.title === selectedService.title);
-        if (direction === 'prev') {
-            const prevIndex = (currentIndex - 1 + filteredServices.length) % filteredServices.length;
-            setSelectedService(filteredServices[prevIndex]);
-            setCurrentPhotoIndex(0);
-        } else {
-            const nextIndex = (currentIndex + 1) % filteredServices.length;
-            setSelectedService(filteredServices[nextIndex]);
-            setCurrentPhotoIndex(0);
-        }
-    };
+    // const navigateModal = (direction, e) => {
+    //     e.stopPropagation();
+    //     const currentIndex = filteredServices.findIndex(s => s.title === selectedService.title);
+    //     if (direction === 'prev') {
+    //         const prevIndex = (currentIndex - 1 + filteredServices.length) % filteredServices.length;
+    //         setSelectedService(filteredServices[prevIndex]);
+    //         setCurrentPhotoIndex(0);
+    //     } else {
+    //         const nextIndex = (currentIndex + 1) % filteredServices.length;
+    //         setSelectedService(filteredServices[nextIndex]);
+    //         setCurrentPhotoIndex(0);
+    //     }
+    // };
 
     return (
         <>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import logo from '../images/2k.png';
+import logo from '../images/2k1.png';
 import '../../src/SplashScreen.css';  
 
 function SplashScreen({ children }) {

@@ -9,7 +9,7 @@ import kws from '../images/clients/golden.png';
 import fours from '../images/clients/4s.png';
 import radison from '../images/clients/rad.png';
 import ihg from '../images/clients/ihg.png';
-import porsche from '../images/clients/porsche.png';
+import Porchelogo from '../images/clients/Porchelogo.jpg';
 import dubai from '../images/clients/dubai.png';
 import oberoi from '../images/clients/oberoi.png';
 import madeo from '../images/clients/madeo.png';
@@ -21,7 +21,7 @@ const Clients = () => {
 
   const clientLogos = [
     { src: ihg, alt: 'IHG', description: 'Intercontinental Hotels Group - Global hospitality leader' },
-    { src: porsche, alt: 'Porsche', description: 'Porsche - Luxury car manufacturer' },
+    { src: Porchelogo, alt: 'Porsche', description: 'Porsche - Luxury car manufacturer' },
     { src: kws, alt: 'Golden', description: 'Golden Hospitality Network - Premium hospitality solutions' },
     { src: radison, alt: 'Radisson', description: 'Radisson Hotel Group - International hotel chain' },
     { src: fours, alt: '4S', description: '4 Seasons Hotels - Luxury hospitality brand' },

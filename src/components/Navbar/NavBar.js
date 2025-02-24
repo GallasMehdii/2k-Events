@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import { Globe } from 'lucide-react'; // Using lucide-react for a more elegant icon
 import { useLanguage } from '../../LanguageContext'; // Import useLanguage hook
-import logo from '../../images/2k.png';
+import logo from '../../images/2k1.png';
 
 const NavBar = () => {
   const { language, changeLanguage } = useLanguage(); // Use context here
@@ -29,7 +29,7 @@ const NavBar = () => {
         {/* Center Logo */}
         <div className="flex justify-center flex-1">
           <HashLink smooth to="/#hero">
-            <img src={logo} alt="2K Events Logo" className="w-auto object-contain filter invert" style={{ height: "50px", transform: "scale(3.5)" }} />
+            <img src={logo} alt="2K Events Logo" className="w-auto object-contain filter invert" style={{ height: "40px", transform: "scale(3.0)" }} />
           </HashLink>
         </div>
 

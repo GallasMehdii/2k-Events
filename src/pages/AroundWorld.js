@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Users, Award, Building, Globe, Heart, Star, CheckCircle, MapPin, EyeClosed, BracesIcon, Diamond, Gem } from 'lucide-react';
+import {Heart, EyeClosed, Gem } from 'lucide-react';
 import NavBar from '../components/Navbar/NavBar';
 
-const TeamPage = () => {
+const AroundWorld = () => {
   const [hoveredService, setHoveredService] = useState(null);
 
   const teamMembers = [
@@ -121,4 +121,4 @@ const TeamPage = () => {
   );
 };
 
-export default TeamPage;
+export default AroundWorld;

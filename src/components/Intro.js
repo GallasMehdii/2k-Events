@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Calendar, MapPin, Users } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 
 // Cloudinary transformation function
 const transformUrl = (url, size = 'default') => {
@@ -18,7 +17,6 @@ const transformUrl = (url, size = 'default') => {
 
 const Intro = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
   const [activeImage, setActiveImage] = useState(0);
   const [isImageLoading, setIsImageLoading] = useState(true);
   const galleryImages = [
@@ -101,9 +99,6 @@ const Intro = () => {
     }
   ];
 
-  const handleDiscoverMoreClick = () => {
-    navigate('/event-details');
-  };
 
   return (
     <section className="bg-white py-12" id="porsche-event">
@@ -173,24 +168,23 @@ const Intro = () => {
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed mt-4">
               {t('Step into the future of automotive luxury at the exclusive Porsche Macan Electric Reveal Event. This one-of-a-kind event brings together the perfect fusion of advanced technology and high-end design, showcasing the innovative features of the Porsche Macan Electric, a bold new step in the world of electric vehicles.')}
             </p>
-
             <div className="mt-8 transform hover:scale-[1.01] transition-all duration-500">
-              <div className="bg-gradient-to-r from-gray-50 via-white to-gray-50 rounded-2xl p-4 sm:p-6 border border-gray-200 shadow-lg">
-                <div className="flex flex-col sm:items-start items-center gap-2 sm:gap-6">
-                  {eventDetails.map((detail, index) => (
-                    <div key={index} className="flex items-center sm:items-start gap-3 sm:gap-2 w-full sm:w-auto px-4 first:pl-0 last:pr-0 group cursor-pointer">
-                      <div className="p-3 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center w-12 h-14 flex-shrink-0 transition-all duration-500">
-                        <div className="text-gray-600">{detail.icon}</div>
+                <div className="bg-gradient-to-r from-gray-50 via-white to-gray-50 rounded-2xl p-4 sm:p-6 border border-gray-200 shadow-lg">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    {eventDetails.map((detail, index) => (
+                      <div key={index} className="flex items-center space-x-3 group cursor-pointer">
+                        <div className="flex items-center justify-center w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100">
+                          <div className="text-gray-600">{detail.icon}</div>
+                        </div>
+                        <div className="flex flex-col">
+                          <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wider font-medium">{detail.label}</p>
+                          <p className="text-xs sm:text-sm text-gray-700">{detail.primary}</p>
+                        </div>
                       </div>
-                      <div className="flex flex-col justify-center text-center sm:text-left">
-                        <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wider font-medium">{detail.label}</p>
-                        <p className="text-xs sm:text-sm text-gray-700">{detail.primary}</p>
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
           </div>
         </div>
       </div>

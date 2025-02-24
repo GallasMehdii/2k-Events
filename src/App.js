@@ -16,7 +16,6 @@ import DemoProduct from './pages/DemoProduct';
 import ScrollToTop from './components/ScrollToTop';
 import Services from './components/Services';
 import AroundWorld from './pages/AroundWorld';
-import PorscheEventDetails from './pages/PorscheEventDetails.js';
 
 function App() {
   useEffect(() => {
@@ -43,8 +42,6 @@ function App() {
             <Route path="/get-demo" element={<DemoProduct />} />
             <Route path='/services' element={<Services />} />
             <Route path='/AroundWorld' element={<AroundWorld />} />
-            <Route path="/event-details" element={<PorscheEventDetails />} />
-
 
           </Routes>
         </ScrollToTop>
