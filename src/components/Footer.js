@@ -17,7 +17,8 @@ const Footer = () => {
                             2k Events Dubai is a premier event management company based in the United Arab Emirates, offering top-notch services in wedding planning, decoration, and catering. Specializing in creating memorable events, they provide a wide range of tailored services for weddings, corporate functions, and private celebrations.
                             </p>
                             <div className="mt-2">
-                                <p className="font-semibold text-sm">📞 +971 52 938 5968</p>
+                                <p className="font-semibold text-sm">📞 (+971) 52 938 5968</p>
+                                <p className="font-semibold text-sm">📞 +(216) 20 004 777</p>
                                 <p className="text-sm">✉️ info@eternalmoments.com</p>
                             </div>
                         </div>

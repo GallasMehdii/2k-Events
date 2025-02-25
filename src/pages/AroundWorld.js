@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import {Heart, EyeClosed, Gem } from 'lucide-react';
+import { Heart, EyeClosed, Gem } from 'lucide-react';
 import NavBar from '../components/Navbar/NavBar';
 
-const AroundWorld = () => {
+const AboutUs = () => {
   const [hoveredService, setHoveredService] = useState(null);
 
   const teamMembers = [
@@ -45,7 +45,7 @@ const AroundWorld = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       <NavBar />
-      
+
       {/* Hero Section */}
       <section className="relative bg-black text-white py-48 overflow-hidden">
         <div className="container mx-auto px-6 text-center relative">
@@ -69,7 +69,8 @@ const AroundWorld = () => {
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-16">About Us</h2>
           <p className="text-lg max-w-3xl mx-auto mb-8">
-            At 2K Events Group, we craft immersive experiences where every detail matters. From scenography and refined décor to lighting design and floral artistry, we create unique settings that elevate your events. With cutting-edge sound, lighting, and audiovisual solutions, we bring your vision to life and create an unforgettable atmosphere.
+            2K Events Group is a premier wedding and event planning agency in Dubai, specializing in luxury weddings and exclusive events. With over 25 years of combined experience in wedding planning, scenography, and decor, we are passionate about creating personalized, breathtaking experiences. Whether it’s a grand wedding or an intimate celebration, our team designs and curates every detail with precision and creativity. 
+            We take pride in turning your vision into reality with impeccable service, bespoke décor, and flawless execution, creating unforgettable memories for you and your loved ones.
           </p>
         </div>
       </section>
@@ -121,4 +122,4 @@ const AroundWorld = () => {
   );
 };
 
-export default AroundWorld;
+export default AboutUs;

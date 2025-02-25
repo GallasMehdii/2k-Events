@@ -159,13 +159,13 @@ const Intro = () => {
           {/* Event Details */}
           <div className="lg:w-1/2 w-full space-y-6">
             <div className="space-y-2">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 tracking-tight animate-fade-in">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-gray-900 tracking-tight animate-fade-in">
                 {t('Porsche Macan Electric')}
               </h2>
               <p className="text-xl sm:text-2xl font-light text-gray-600">Reveal Event</p>
             </div>
 
-            <p className="text-base sm:text-lg text-gray-600 leading-relaxed mt-4">
+            <p className="text-base  sm:text-lg text-gray-600 leading-relaxed mt-4">
               {t('Step into the future of automotive luxury at the exclusive Porsche Macan Electric Reveal Event. This one-of-a-kind event brings together the perfect fusion of advanced technology and high-end design, showcasing the innovative features of the Porsche Macan Electric, a bold new step in the world of electric vehicles.')}
             </p>
             <div className="mt-8 transform hover:scale-[1.01] transition-all duration-500">

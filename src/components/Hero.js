@@ -91,25 +91,23 @@ const Hero = () => {
           </span>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-9 sm:space-y-0 sm:space-x-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-6 sm:space-y-0 sm:space-x-6 mt-8">
             <Link
               to="/contact"
-              className="group relative px-8 py-4 bg-white/10 backdrop-blur-sm rounded-full transition-all duration-300 hover:bg-white/20"
+              className="relative px-10 py-4 bg-gradient-to-r from-gray-500 to-gray-900 text-white font-semibold rounded-full transition-all duration-500 ease-in-out transform hover:scale-110 hover:shadow-lg hover:from-gray-600 hover:to-gray-800 animate-in"
             >
-              <span className="relative z-10 text-white font-medium tracking-wider">
-                Book Your Consultation
-              </span>
+              Book Your Consultation
             </Link>
 
             <Link
               to="/AroundWorld"
-              className="group relative px-8 py-4 border border-gray-400/30 rounded-full transition-all duration-300 hover:border-gray-400/50"
+              className="relative px-10 py-4 bg-gradient-to-r from-gray-500 to-gray-900 text-white font-semibold rounded-full transition-all duration-500 ease-in-out transform hover:scale-110 hover:shadow-lg hover:from-gray-600 hover:to-gray-800 animate-in"
             >
-              <span className="relative z-10 text-gray-300 font-medium tracking-wider group-hover:text-white transition-colors duration-300">
-                About Our Agency
-              </span>
+              About Our Agency
             </Link>
           </div>
+
+
         </div>
       </div>
     </div>
