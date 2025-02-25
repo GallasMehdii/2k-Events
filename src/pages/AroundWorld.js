@@ -8,7 +8,7 @@ const AboutUs = () => {
   const teamMembers = [
     {
       name: "Kammoun Khouloud",
-      role: "Founder & Lead Wedding Planner",
+      role: "Event Designer",
       description: "With over 15 years of experience in curating luxury weddings, Khouloud transforms dreams into reality with elegance and precision.",
       expertise: ["Exclusive Event Curation", "Luxury Vendor Networking", "Timeless Wedding Aesthetics"],
       social: { linkedin: "#", twitter: "#" },
