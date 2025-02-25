@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import NavBar from './Navbar/NavBar';
 import LoadingSpinner from './LoadingSpinner';
+import { WandSparkles, Palette, Diamond, Star, PartyPopper } from 'lucide-react';
 
 const Services = () => {
     const [selectedService, setSelectedService] = useState(null);
@@ -15,10 +16,12 @@ const Services = () => {
         {
             title: "Singapour",
             photos: [
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740226077/DSC03568_yvgxx7.jpg",
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740226071/DSC03534_tqnwqw.jpg",
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740226063/DSC03521_exkyyi.jpg",
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740226516/zz_i7t6bz.jpg"
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740484900/DSC03495_e8qbuw.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740484904/DSC03536_yjfi4x.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740484901/DSC03506_mcroc7.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740484900/DSC03510_q8110i.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740484917/DSC03547_e5toei.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740484899/IMG_5789_m32okx.jpg",
             ],
             video: "/images/video/singapore.mp4", // Add this line
             thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740226071/DSC03534_tqnwqw.jpg",
@@ -28,14 +31,18 @@ const Services = () => {
 
         },
         {
-            title: "Jardin d'Eden",
+            title: "Eden Garden",
             photos: [
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350223/-113__rrivnl.jpg",
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350200/-100__xf3iel.jpg",
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350196/-112__u3rdme.jpg",
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350082/-98__pmemdx.jpg",
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350060/-99__pucegx.jpg",
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350005/-103__v4gat5.jpg"
+
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483929/-97__wromw9.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483928/-103__i3cc5e.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483927/-111__zw35fz.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483929/-113__afxz6g.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483928/-114__amu7uf.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483926/-107__aut7jy.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483926/-104__eqa8td.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483925/-102__pqimqr.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483925/-100__ikfasm.jpg"
             ],
             thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350223/-113__rrivnl.jpg",
             type: "wedding",
@@ -48,7 +55,7 @@ const Services = () => {
             photos: [
                 "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350711/6U2A6506_vjbtve.jpg",
                 "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350708/6U2A6331_mwnj4t.jpg",
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350692/6U2A6336_kbczno.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800//v1740485067/6U2A6336_jnttus.jpg",
                 "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350669/6U2A6349_p4yvjg.jpg",
                 "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350562/6U2A6389_du7zcd.jpg",
                 "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350616/6U2A6499_wo7l8f.jpg"
@@ -67,7 +74,10 @@ const Services = () => {
                 "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740239953/096A5622_zsrg84.jpg",
                 "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740239902/096A7580_u0rrbt.jpg",
                 "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740239854/096A5586_wurt3g.jpg",
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740237714/096A5591_l50mrl.jpg"
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483899/096A5784_hjchor.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483899/096A5722_xnwe1m.jpg",
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483899/096A5762_zpbska.jpg"
+
             ],
             thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740239854/096A5586_wurt3g.jpg",
             type: "wedding",
@@ -321,9 +331,10 @@ const Services = () => {
             <NavBar />
             <div id="services" className="bg-gradient-to-b from-gray-50 to-white py-12">
                 <section data-aos="zoom-in-down">
-                    <div className="my-0 py-1 ">
+                    <div className="my-3 py-0">
                         {/* Luxury Introduction Section */}
-                        <div className="max-w-6xl mx-auto px- sm:px-6 lg:px-1 mt-16 mb-2">
+
+                        <div className="max-w-6xl mx-auto sm:px-6 lg:px-1 mt-16 mb-2">
                             <div className="text-center mb-16">
                                 <h2 className="text-4xl md:text-5xl font-serif text-gray-800 font-bold mb-6">
                                     Elevating Dreams into Reality
@@ -349,10 +360,7 @@ const Services = () => {
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                                 <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-200 transform transition-all duration-300 hover:shadow-2xl hover:scale-110 text-center">
                                     <div className="flex justify-center mb-6">
-                                        <svg class="w-14 h-14 text-[#C19A6B] transition-transform duration-500 ease-in-out transform hover:scale-125" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2M12 19v2M21 12h-2M3 12H1M16.24 7.76l-1.42 1.42M7.76 16.24l-1.42 1.42M16.24 16.24l-1.42-1.42M7.76 7.76l-1.42-1.42"></path>
-                                        </svg>
-
+                                        <PartyPopper className="w-14 h-14 text-[#C19A6B] transition-transform duration-500 ease-in-out transform hover:scale-125" />
                                     </div>
                                     <h3 className="font-serif text-2xl text-gray-800 font-semibold mb-3">Unmatched Attention to Detail</h3>
                                     <p className="text-gray-700 font-medium leading-relaxed">
@@ -365,9 +373,7 @@ const Services = () => {
 
                                 <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-200 transform transition-all duration-300 hover:shadow-2xl hover:scale-110 text-center">
                                     <div className="flex justify-center mb-6">
-                                    <svg class="w-14 h-14 text-[#C19A6B] transition-transform duration-500 ease-in-out transform hover:scale-125" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2C10.4 2 9 3.4 9 5C9 6.6 10.4 8 12 8C13.6 8 15 6.6 15 5C15 3.4 13.6 2 12 2ZM7.5 6.3C6.9 5.7 5.9 5.7 5.3 6.3C4.7 6.9 4.7 7.9 5.3 8.5C5.9 9.1 6.9 9.1 7.5 8.5C8.1 7.9 8.1 6.9 7.5 6.3ZM18.7 6.3C18.1 5.7 17.1 5.7 16.5 6.3C15.9 6.9 15.9 7.9 16.5 8.5C17.1 9.1 18.1 9.1 18.7 8.5C19.3 7.9 19.3 6.9 18.7 6.3ZM12 10C10.4 10 9 11.4 9 13C9 14.6 10.4 16 12 16C13.6 16 15 14.6 15 13C15 11.4 13.6 10 12 10Z"></path>
-</svg>
+                                        <WandSparkles className="w-14 h-14 text-[#C19A6B] transition-transform duration-500 ease-in-out transform hover:scale-125" />
                                     </div>
                                     <h3 className="font-serif text-2xl text-gray-800 font-semibold mb-3">Innovative Design</h3>
                                     <p className="text-gray-700 font-medium leading-relaxed">
@@ -380,10 +386,7 @@ const Services = () => {
 
                                 <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-200 transform transition-all duration-300 hover:shadow-2xl hover:scale-110 text-center">
                                     <div className="flex justify-center mb-6">
-                                    <svg class="w-14 h-14 text-[#C19A6B] transition-transform duration-500 ease-in-out transform hover:scale-125" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2a5 5 0 0 0-5 5c0 2.7 2 5 5 5s5-2.3 5-5a5 5 0 0 0-5-5zm0 10c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"></path>
-</svg>
-
+                                        <Diamond className="w-14 h-14 text-[#C19A6B] transition-transform duration-500 ease-in-out transform hover:scale-125" />
                                     </div>
                                     <h3 className="font-serif text-2xl text-gray-800 font-semibold mb-3">Timeless Elegance</h3>
                                     <p className="text-gray-700 font-medium leading-relaxed">
@@ -396,11 +399,7 @@ const Services = () => {
 
                                 <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-200 transform transition-all duration-300 hover:shadow-2xl hover:scale-110 text-center">
                                     <div className="flex justify-center mb-6">
-                                    <svg class="w-14 h-14 text-[#C19A6B] transition-transform duration-500 ease-in-out transform hover:scale-125" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zM9 20h6M7 8h10v12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V8z"></path>
-</svg>
-
-
+                                        <Star className="w-14 h-14 text-[#C19A6B] transition-transform duration-500 ease-in-out transform hover:scale-125" />
                                     </div>
                                     <h3 className="font-serif text-2xl text-gray-800 font-semibold mb-3">Unforgettable Memories</h3>
                                     <p className="text-gray-700 font-medium leading-relaxed">
