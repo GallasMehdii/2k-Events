@@ -11,6 +11,7 @@ const Hero = () => {
   const media = [
     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto/v1739218950/jungle-1_npxmvf.png",
     "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740500376/2k_7_wfzxh4.mp4",
+    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740762132/Morroco_Caroussel_wb9f10.mp4",
     "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740692706/2k_atmospher_gabeve.mp4",
     "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740501848/2k_reveal_4_qbvr3c.mp4",
   ];

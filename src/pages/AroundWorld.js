@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Heart, EyeClosed, Gem } from 'lucide-react';
 import NavBar from '../components/Navbar/NavBar';
 
-const AboutUs = () => {
+const AroundWorld = () => {
   const [hoveredService, setHoveredService] = useState(null);
 
   const teamMembers = [
@@ -122,4 +122,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default AroundWorld;
