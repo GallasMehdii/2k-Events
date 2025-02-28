@@ -23,31 +23,11 @@ const Services = () => {
                 "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740484917/DSC03547_e5toei.jpg",
                 "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740484899/IMG_5789_m32okx.jpg",
             ],
-            video: "/images/video/singapore.mp4", // Add this line
+            video: "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740692085/singapore_1_rdvr8u.mp4", // Add this line
             thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740226071/DSC03534_tqnwqw.jpg",
             type: "wedding",
             category: "ceremony",
             description: "Urban elegance meets timeless luxury in our iconic Singapore-inspired celebration settings."
-
-        },
-        {
-            title: "Eden Garden",
-            photos: [
-
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483929/-97__wromw9.jpg",
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483928/-103__i3cc5e.jpg",
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483927/-111__zw35fz.jpg",
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483929/-113__afxz6g.jpg",
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483928/-114__amu7uf.jpg",
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483926/-107__aut7jy.jpg",
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483926/-104__eqa8td.jpg",
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483925/-102__pqimqr.jpg",
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483925/-100__ikfasm.jpg"
-            ],
-            thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350223/-113__rrivnl.jpg",
-            type: "wedding",
-            category: "luxury",
-            description: "A lush paradise of floral abundance creating an ethereal setting for your treasured moments."
 
         },
         {
@@ -79,6 +59,7 @@ const Services = () => {
                 "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483899/096A5762_zpbska.jpg"
 
             ],
+            video:"https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740578059/decoration_tamer_hosni_fgwofx.mp4",
             thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740239854/096A5586_wurt3g.jpg",
             type: "wedding",
             category: "full-service",
@@ -114,6 +95,7 @@ const Services = () => {
                 "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740348769/DSC08033_rmj5wk.jpg",
                 "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740348762/DSC08297_frlcim.jpg"
             ],
+            video: "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740691205/bvlgari_2_apukn9.mp4",
             thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740348769/DSC08033_rmj5wk.jpg",
             type: "wedding",
             category: "bvlgari",
@@ -301,12 +283,28 @@ const Services = () => {
         service.type === activeType &&
         (activeCategory === 'all' || service.category === activeCategory)
     );
+    // Function to open the video modal
+    const openVideoModal = () => {
+        setVideoModalOpen(true);
+    };
 
+    // Function to close the video modal
+    const closeVideoModal = () => {
+        setVideoModalOpen(false);
+    };
+    const handleOpenVideo = (index) => {
+        setCurrentPhotoIndex(index);
+        setVideoModalOpen(true);
+    };
+    const [showingVideo, setShowingVideo] = useState(false);
+
+    // Update the openModal function to initialize video state
     const openModal = (service) => {
         setSelectedService(service);
         setCurrentPhotoIndex(0);
+        setShowingVideo(false); // Always start with photos
         setModalOpen(true);
-        document.body.style.overflow = 'hidden';
+        setLoading(true);
     };
 
     const closeModal = () => {
@@ -315,24 +313,53 @@ const Services = () => {
         document.body.style.overflow = 'unset';
     };
 
-    const prevPhoto = (e) => {
+
+    // Update the nextPhoto function to handle the transition to video
+    const nextPhoto = (e) => {
         e.stopPropagation();
-        if (loading) return; // Prevent navigation while loading
-        setCurrentPhotoIndex((prevIndex) =>
-            (prevIndex - 1 + selectedService.photos.length) % selectedService.photos.length
-        );
+
+        if (showingVideo) {
+            // If we're showing video, loop back to the first photo
+            setShowingVideo(false);
+            setCurrentPhotoIndex(0);
+        } else if (currentPhotoIndex === selectedService.photos.length - 1) {
+            // If we're at the last photo and there's a video, show the video
+            if (selectedService.video) {
+                setShowingVideo(true);
+            } else {
+                // If no video, loop back to the first photo
+                setCurrentPhotoIndex(0);
+            }
+        } else {
+            // Otherwise, go to the next photo
+            setCurrentPhotoIndex(prevIndex => prevIndex + 1);
+        }
+
+        setTimeout(() => setLoading(false), 300);
     };
 
+    // Update the prevPhoto function similarly
+    const prevPhoto = (e) => {
+        e.stopPropagation();
 
-    const nextPhoto = (e) => {
-        if (e) {
-            e.stopPropagation();
-            e.preventDefault();
+        if (showingVideo) {
+            // If we're showing video, go back to the last photo
+            setShowingVideo(false);
+            setCurrentPhotoIndex(selectedService.photos.length - 1);
+        } else if (currentPhotoIndex === 0) {
+            // If at the first photo, go to video if available (as if it's the "last" item)
+            if (selectedService.video) {
+                setShowingVideo(true);
+            } else {
+                // If no video, loop to the last photo
+                setCurrentPhotoIndex(selectedService.photos.length - 1);
+            }
+        } else {
+            // Otherwise, go to the previous photo
+            setCurrentPhotoIndex(prevIndex => prevIndex - 1);
         }
-        if (loading) return; // Prevent navigation while loading
-        setCurrentPhotoIndex((prevIndex) =>
-            (prevIndex + 1) % selectedService.photos.length
-        );
+
+        setTimeout(() => setLoading(false), 300);
     };
 
     // const navigateModal = (direction, e) => {
@@ -486,31 +513,29 @@ const Services = () => {
                                     className="group relative overflow-hidden rounded-2xl cursor-pointer shadow-lg transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-xl"
                                     onClick={() => openModal(service)}
                                 >
-                                    {/* Image Container */}
+                                    {/* Display only the thumbnailImage */}
                                     <div className="relative h-[250px] sm:h-[300px] md:h-[350px] overflow-hidden">
-                                        <img
-                                            src={service.thumbnailImage}
-                                            srcSet={`${service.thumbnailImage.replace("upload/", "upload/w_400/")} 400w, 
-                         ${service.thumbnailImage.replace("upload/", "upload/w_800/")} 800w, 
-                         ${service.thumbnailImage.replace("upload/", "upload/w_1200/")} 1200w`}
-                                            sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
-                                            alt={service.title}
-                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                            loading="lazy"
-                                        />
-                                        {/* Enhanced Gradient Overlay - Adjusted for better text readability */}
+                                        {service.thumbnailImage && (
+                                            <img
+                                                src={service.thumbnailImage}
+                                                alt={`${service.title} thumbnail`}
+                                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                                loading="lazy"
+                                            />
+                                        )}
+
+                                        {/* Gradient overlay */}
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-500" />
                                     </div>
-                                    {/* Title and Description Container - Responsive positioning and sizing */}
+
+                                    {/* Title and description */}
                                     <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
                                         <h3 className="font-serif text-xl sm:text-2xl text-white tracking-wider transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                                             {service.title}
                                         </h3>
                                         <div className="w-12 h-1 bg-pink-200 mt-2 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-
-                                        {/* Description - Mobile-optimized with text size adjustment */}
                                         <p className="text-gray-200 mt-2 sm:mt-3 text-xs sm:text-sm opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 line-clamp-2 sm:line-clamp-3">
-                                            {service.description || "Elevate your experience with our meticulously crafted service, designed with unparalleled attention to detail."}
+                                            {service.description || "Elevate your experience with our meticulously crafted service."}
                                         </p>
                                     </div>
                                 </div>
@@ -536,15 +561,35 @@ const Services = () => {
                                 </div>
                             )}
 
-                            <img
-                                src={selectedService.photos[currentPhotoIndex]}
-                                alt={`${selectedService.title} - photo ${currentPhotoIndex + 1}`}
-                                className={`w-full h-full object-contain transition-opacity duration-300 ${loading ? "opacity-0" : "opacity-100"}`}
-                                onLoad={() => setLoading(false)}
-                            />
+                            {/* Conditional rendering based on showingVideo state */}
+                            {!loading && (
+                                <>
+                                    {showingVideo && selectedService.video ? (
+                                        // Video display when showingVideo is true
+                                        <video
+                                            className="w-full h-full object-contain"
+                                            controls
+                                            preload="metadata" // Preload metadata only
+                                            autoPlay
+                                            playsInline
+                                        >
+                                            <source src={selectedService.video} type="video/mp4" />
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    ) : (
+                                        // Photo display when showingVideo is false
+                                        <img
+                                            src={selectedService.photos[currentPhotoIndex]}
+                                            alt={`${selectedService.title} - photo ${currentPhotoIndex + 1}`}
+                                            className="w-full h-full object-contain transition-opacity duration-300"
+                                            onLoad={() => setLoading(false)}
+                                        />
+                                    )}
+                                </>
+                            )}
 
-                            {/* Navigation Buttons - Made larger and more visible */}
-                            {!loading && selectedService.photos.length > 1 && (
+                            {/* Navigation Buttons - Show for both photo and video navigation */}
+                            {!loading && (selectedService.photos.length > 1 || selectedService.video) && (
                                 <>
                                     <button
                                         className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 bg-black/50 hover:bg-black/70 p-4 rounded-full transition-all duration-300"
@@ -583,14 +628,15 @@ const Services = () => {
                                 </>
                             )}
 
-                            {/* Thumbnails Strip - Now positioned at bottom with semi-transparent background */}
+                            {/* Thumbnails Strip - Updated to include video thumbnail as the last item */}
                             <div className="absolute bottom-0 left-0 right-0 flex justify-center gap-2 overflow-x-auto py-4 px-2 bg-black/60 backdrop-blur-sm">
+                                {/* Photo thumbnails */}
                                 {selectedService.photos.map((photo, index) => (
                                     <img
                                         key={index}
                                         src={photo}
                                         alt={`Thumbnail ${index + 1}`}
-                                        className={`w-16 h-16 object-cover cursor-pointer transition-all duration-300 ${currentPhotoIndex === index
+                                        className={`w-16 h-16 object-cover cursor-pointer transition-all duration-300 ${!showingVideo && currentPhotoIndex === index
                                             ? 'border-2 border-white scale-110'
                                             : 'border border-gray-600 opacity-70 hover:opacity-100'
                                             }`}
@@ -598,9 +644,42 @@ const Services = () => {
                                             e.stopPropagation();
                                             setLoading(true);
                                             setCurrentPhotoIndex(index);
+                                            setShowingVideo(false);
                                         }}
                                     />
                                 ))}
+
+                                {/* Video thumbnail as the last item */}
+                                {selectedService.video && (
+                                    <div
+                                        className={`w-16 h-16 flex items-center justify-center cursor-pointer transition-all duration-300 bg-gray-900 ${showingVideo
+                                            ? 'border-2 border-white scale-110'
+                                            : 'border border-gray-600 opacity-70 hover:opacity-100'
+                                            }`}
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setLoading(true);
+                                            setShowingVideo(true);
+                                            setTimeout(() => setLoading(false), 300);
+                                        }}
+                                    >
+                                        {/* Video icon */}
+                                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
+                                                d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                                            />
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
+                                                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                            />
+                                        </svg>
+                                    </div>
+                                )}
                             </div>
 
                             {/* Close Button - Repositioned and made more prominent */}

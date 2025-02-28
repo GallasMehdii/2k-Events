@@ -1,100 +1,121 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
+  const [prevMediaIndex, setPrevMediaIndex] = useState(null);
   const videoRef = useRef(null);
+  const [mediaLoaded, setMediaLoaded] = useState(Array(4).fill(false));
 
-  // Media URLs
   const media = [
     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto/v1739218950/jungle-1_npxmvf.png",
     "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740500376/2k_7_wfzxh4.mp4",
-    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto/v1739218810/meddeb-3_uprgj4.png",
+    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740692706/2k_atmospher_gabeve.mp4",
     "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740501848/2k_reveal_4_qbvr3c.mp4",
-    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto/v1739218874/tamer-hosni-3_ncpdy0.png",
-    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto/v1739219858/yacine-fatma-golden-tulip_dov0cp.png",
   ];
 
+  // Function to move to the next media
+  const nextMedia = useCallback(() => {
+    setPrevMediaIndex(currentMediaIndex);
+    setCurrentMediaIndex((prevIndex) => (prevIndex + 1) % media.length);
+  }, [currentMediaIndex]);
+
+  // Mark a specific media item as loaded
+  const handleMediaLoaded = (index) => {
+    setMediaLoaded((prev) => {
+      const newState = [...prev];
+      newState[index] = true;
+      return newState;
+    });
+  };
+
   useEffect(() => {
-    let intervalRef;
+    let timer;
+    const currentMedia = media[currentMediaIndex];
 
-    if (media[currentMediaIndex].includes("video")) {
-      // If the current media is a video, handle video playback manually
-      if (videoRef.current) {
-        console.log("Video ref is set, playing video...");
-        
-        // Reset video playback on each render
-        videoRef.current.currentTime = 0;
-        videoRef.current.play();
-
-        // Event listener for video end
-        const handleVideoEnd = () => {
-          console.log("Video ended, switching media...");
-          setCurrentMediaIndex((prevIndex) => (prevIndex + 1) % media.length);
-        };
-
-        // Add the end event listener
-        videoRef.current.addEventListener("ended", handleVideoEnd);
-
-        return () => {
-          // Cleanup event listener
-          console.log("Cleaning up video event listener...");
-          videoRef.current.removeEventListener("ended", handleVideoEnd);
-        };
-      }
+    // Preload the next media item
+    const preloadNextIndex = (currentMediaIndex + 1) % media.length;
+    const preloadMedia = media[preloadNextIndex];
+    
+    if (preloadMedia.endsWith(".mp4")) {
+      const preloadVideo = document.createElement("video");
+      preloadVideo.src = preloadMedia;
+      preloadVideo.preload = "auto";
+      preloadVideo.muted = true;
     } else {
-      // If it's an image, change media every 3 seconds
-      intervalRef = setInterval(() => {
-        setCurrentMediaIndex((prevIndex) => (prevIndex + 1) % media.length);
+      const preloadImg = new Image();
+      preloadImg.src = preloadMedia;
+    }
+
+    if (currentMedia.endsWith(".mp4") && videoRef.current) {
+      const video = videoRef.current;
+      video.currentTime = 0;
+      video.play().catch((err) => console.warn("Autoplay blocked:", err));
+
+      const handleVideoEnd = () => nextMedia();
+      video.addEventListener("ended", handleVideoEnd);
+
+      return () => {
+        video.removeEventListener("ended", handleVideoEnd);
+      };
+    } else {
+      // For images, use a timeout
+      timer = setTimeout(() => {
+        nextMedia();
       }, 5000);
     }
 
-    return () => clearInterval(intervalRef);
-  }, [currentMediaIndex, media]);
+    return () => clearTimeout(timer);
+  }, [currentMediaIndex, nextMedia]);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
-      {/* Background Media (Preloaded & Animated) */}
+    <div className="relative h-screen w-full overflow-hidden bg-black">
       {media.map((src, index) => (
         <div
           key={index}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-            index === currentMediaIndex ? "opacity-100" : "opacity-0"
+          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
+            index === currentMediaIndex ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
-          style={{ position: "absolute", transition: "opacity 1s ease-in-out" }}
+          style={{ 
+            zIndex: index === currentMediaIndex ? 1 : 0,
+            transitionProperty: "opacity",
+            transitionTimingFunction: "ease-in-out"
+          }}
         >
-          {src.includes("video") ? (
+          {src.endsWith(".mp4") ? (
             <video
-              key={currentMediaIndex} // Ensure React re-renders the video
-              ref={videoRef}
+              key={`video-${index}`}
+              ref={index === currentMediaIndex ? videoRef : null}
               src={src}
-              autoPlay
-              loop={false} // Ensure video doesn't loop
+              autoPlay={index === currentMediaIndex}
+              loop={false}
               muted
               playsInline
               preload="auto"
               className="w-full h-full object-cover"
-              loading="auto" // Ensure immediate loading
+              onLoadedData={() => handleMediaLoaded(index)}
+              style={{ opacity: mediaLoaded[index] ? 1 : 0, transition: "opacity 500ms ease-in-out" }}
             />
           ) : (
             <img
               src={src}
               alt="Hero Background"
               className="w-full h-full object-cover"
-              loading="lazy"
+              loading="eager"
+              onLoad={() => handleMediaLoaded(index)}
+              style={{ opacity: mediaLoaded[index] ? 1 : 0, transition: "opacity 500ms ease-in-out" }}
             />
           )}
         </div>
       ))}
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 z-10" />
 
       {/* Hero Content */}
       <div className="relative z-20 flex items-center justify-center h-full">
         <div className="container mx-auto px-4 text-center max-w-5xl">
-          {/* Decorative Line */}
           <div className="flex justify-center items-center mb-8">
             <div className="h-px w-16 bg-gradient-to-r from-transparent via-gray-400 to-transparent" />
             <div className="mx-4 text-gray-400 text-sm tracking-[0.3em] uppercase">
@@ -103,7 +124,6 @@ const Hero = () => {
             <div className="h-px w-16 bg-gradient-to-r from-transparent via-gray-400 to-transparent" />
           </div>
 
-          {/* Main Title with Enhanced Animations */}
           <motion.h1
             className="text-5xl md:text-7xl font-serif font-bold mb-8 tracking-wider text-white"
             initial={{ opacity: 0, y: 50 }}
@@ -131,17 +151,10 @@ const Hero = () => {
             </motion.span>
           </motion.h1>
 
-          {/* Description */}
-          <span
-            className="text-xl md:text-2xl font-light text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut", delay: 0.9 }}
-          >
+          <span className="text-xl md:text-2xl font-light text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
             Redefining celebrations with unparalleled sophistication.
           </span>
 
-          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-6 sm:space-y-0 sm:space-x-6 mt-8">
             <Link
               to="/contact"
