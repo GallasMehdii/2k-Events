@@ -11,6 +11,8 @@ const Services = () => {
     const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
     const [loading, setLoading] = useState(true);
     const [videoModalOpen, setVideoModalOpen] = useState(false);
+    const [showingVideo, setShowingVideo] = useState(false);
+
 
     const services = [
         {
@@ -277,9 +279,9 @@ const Services = () => {
 
             title: "Butterfly",
             photos: [
-                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740490594/IMG-20250225-WA0011_aacq76.jpg"
+                "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740840670/dolce_hkhhuo.png"
             ],
-            thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740490590/IMG-20250225-WA0012_xlf08o.jpg",
+            thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740840670/dolce_hkhhuo.png",
             video: "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740693664/makrem_four_sesons_kydexo.mp4",
             type: "wedding",
             category: "Butterfly",
@@ -306,7 +308,7 @@ const Services = () => {
                 "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740766101/7X7A4723_jvdsgm.jpg",
             ],
             thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740766101/7X7A4723_jvdsgm.jpg",
-            video: "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740693664/makrem_four_sesons_kydexo.mp4",
+            video: "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740839983/KD_2_1_oion50.mp4",
             type: "corporate",
             category: "kuwait",
             description: "Innovative floral designs and advanced event styling, crafted to transform corporate gatherings at IHG Kuwait into sophisticated, visually stunning experiences."
@@ -353,20 +355,6 @@ const Services = () => {
         service.type === activeType &&
         (activeCategory === 'all' || service.category === activeCategory)
     );
-    // Function to open the video modal
-    const openVideoModal = () => {
-        setVideoModalOpen(true);
-    };
-
-    // Function to close the video modal
-    const closeVideoModal = () => {
-        setVideoModalOpen(false);
-    };
-    const handleOpenVideo = (index) => {
-        setCurrentPhotoIndex(index);
-        setVideoModalOpen(true);
-    };
-    const [showingVideo, setShowingVideo] = useState(false);
 
     // Update the openModal function to initialize video state
     const openModal = (service) => {
@@ -454,7 +442,7 @@ const Services = () => {
                     <div className="my-3 py-0">
                         {/* Luxury Introduction Section */}
 
-                        <div className="max-w-6xl mx-auto sm:px-6 lg:px-1 mt-16 mb-2">
+                        <div className="max-w-6xl mx-auto sm:px-6 lg:px-1 mt-3 mb-2">
                             <div className="text-center mb-16">
                                 <h2 className="text-4xl md:text-5xl font-serif text-gray-800 font-bold mb-6">
                                     Elevating Dreams into Reality

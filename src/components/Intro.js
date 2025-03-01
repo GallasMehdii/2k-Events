@@ -81,6 +81,13 @@ const Intro = () => {
     setActiveImage(newIndex);
   };
 
+  const handleDotClick = (index) => {
+    if (index !== activeImage) {
+      setIsImageLoading(true);
+      setActiveImage(index);
+    }
+  };
+
   const eventDetails = [
     {
       icon: <Calendar className="w-5 h-5" />,
@@ -133,6 +140,7 @@ const Intro = () => {
                 fetchPriority={activeImage === 0 ? "high" : "auto"}
               />
 
+              {/* Gallery Navigation Buttons */}
               <div className="absolute inset-0 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-all duration-500">
                 <button
                   onClick={() => handleImageChange('prev')}
@@ -152,6 +160,24 @@ const Intro = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
+              </div>
+
+              {/* Gallery Dots - Added in the middle bottom of the card */}
+              <div className="absolute bottom-4 left-0 right-0 flex justify-center items-center gap-2 transition-opacity duration-500 opacity-70 group-hover:opacity-100">
+                <div className="bg-white/70 backdrop-blur-sm py-2 px-3 rounded-full flex items-center space-x-2 shadow-md">
+                  {galleryImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handleDotClick(index)}
+                      aria-label={`View image ${index + 1}`}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === activeImage
+                          ? 'bg-gray-800 w-3 h-3'
+                          : 'bg-gray-400 hover:bg-gray-600'
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
