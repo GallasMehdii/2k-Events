@@ -1,43 +1,43 @@
 import React from 'react';
 
 const Portfolio = () => {
-  const locations = [
-    {
-      name: "Morocco",
-      events: "Cultural Celebrations, Destination Weddings",
-      region: "North Africa"
-    },
-    {
-      name: "Algeria",
-      events: "Corporate Events, Traditional Festivals",
-      region: "North Africa"
-    },
-    {
-      name: "Tunisia",
-      events: "Beach Weddings, Luxury Retreats",
-      region: "North Africa"
-    },
-    {
-      name: "Saudi Arabia",
-      events: "Royal Weddings, Business Conferences",
-      region: "Middle East"
-    },
-    {
-      name: "Kuwait",
-      events: "High-End Gatherings, Corporate Meetings",
-      region: "Middle East"
-    },
-    {
-      name: "Qatar",
-      events: "Luxury Events, International Summits",
-      region: "Middle East"
-    },
-    {
-      name: "United Arab Emirates",
-      events: "Exclusive Parties, Global Expos",
-      region: "Middle East"
-    }
-  ];
+  // const locations = [
+  //   {
+  //     name: "Morocco",
+  //     events: "Cultural Celebrations, Destination Weddings",
+  //     region: "North Africa"
+  //   },
+  //   {
+  //     name: "Algeria",
+  //     events: "Corporate Events, Traditional Festivals",
+  //     region: "North Africa"
+  //   },
+  //   {
+  //     name: "Tunisia",
+  //     events: "Beach Weddings, Luxury Retreats",
+  //     region: "North Africa"
+  //   },
+  //   {
+  //     name: "Saudi Arabia",
+  //     events: "Royal Weddings, Business Conferences",
+  //     region: "Middle East"
+  //   },
+  //   {
+  //     name: "Kuwait",
+  //     events: "High-End Gatherings, Corporate Meetings",
+  //     region: "Middle East"
+  //   },
+  //   {
+  //     name: "Qatar",
+  //     events: "Luxury Events, International Summits",
+  //     region: "Middle East"
+  //   },
+  //   {
+  //     name: "United Arab Emirates",
+  //     events: "Exclusive Parties, Global Expos",
+  //     region: "Middle East"
+  //   }
+  // ];
 
   return (
     <div className="relative min-h-screen bg-[#0a0a0a] text-white">
@@ -63,7 +63,7 @@ const Portfolio = () => {
       </div>
       
       {/* Location List */}
-      <div className="relative mt-8 pb-3">
+      {/* <div className="relative mt-8 pb-3">
         <div className="max-w-7xl mx-auto px-1 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-6">
             {locations.map((location) => (
@@ -77,9 +77,9 @@ const Portfolio = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
-    </div>
+    
   );
 };
 

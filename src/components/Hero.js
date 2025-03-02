@@ -1,111 +1,167 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import NavBar from "./Navbar/NavBar";
 
 const Hero = () => {
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
-  const [prevMediaIndex, setPrevMediaIndex] = useState(null);
-  const videoRef = useRef(null);
-  const [mediaLoaded, setMediaLoaded] = useState(Array(4).fill(false));
+  const videoRefs = useRef([]);
+  const [mediaLoaded, setMediaLoaded] = useState({});
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  // Configure refs array
+  const setVideoRef = (element, index) => {
+    videoRefs.current[index] = element;
+  };
 
   const media = [
-    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto/v1739218950/jungle-1_npxmvf.png",
-    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740500376/2k_7_wfzxh4.mp4",
-    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740762132/Morroco_Caroussel_wb9f10.mp4",
-    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740692706/2k_atmospher_gabeve.mp4",
-    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740501848/2k_reveal_4_qbvr3c.mp4",
+    {
+      src: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto/v1739218950/jungle-1_npxmvf.png",
+      type: "image"
+    },
+    {
+      src: "https://res.cloudinary.com/dx5y2bzdq/video/upload/q_auto,f_auto,c_limit/v1740500376/2k_7_wfzxh4.mp4",
+      type: "video",
+      poster: "https://res.cloudinary.com/dx5y2bzdq/video/upload/q_auto,f_auto,c_limit,so_0/v1740500376/2k_7_wfzxh4.jpg"
+    },
+    {
+      src: "https://res.cloudinary.com/dx5y2bzdq/video/upload/q_auto,f_auto,c_limit/v1740762132/Morroco_Caroussel_wb9f10.mp4",
+      type: "video",
+      poster: "https://res.cloudinary.com/dx5y2bzdq/video/upload/q_auto,f_auto,c_limit,so_0/v1740762132/Morroco_Caroussel_wb9f10.jpg"
+    },
+    {
+      src: "https://res.cloudinary.com/dx5y2bzdq/video/upload/q_auto,f_auto,c_limit/v1740692706/2k_atmospher_gabeve.mp4",
+      type: "video",
+      poster: "https://res.cloudinary.com/dx5y2bzdq/video/upload/q_auto,f_auto,c_limit,so_0/v1740692706/2k_atmospher_gabeve.jpg"
+    },
+    {
+      src: "https://res.cloudinary.com/dx5y2bzdq/video/upload/q_auto,f_auto,c_limit/v1740501848/2k_reveal_4_qbvr3c.mp4",
+      type: "video",
+      poster: "https://res.cloudinary.com/dx5y2bzdq/video/upload/q_auto,f_auto,c_limit,so_0/v1740501848/2k_reveal_4_qbvr3c.jpg"
+    },
   ];
 
   // Function to move to the next media
   const nextMedia = useCallback(() => {
-    setPrevMediaIndex(currentMediaIndex);
-    setCurrentMediaIndex((prevIndex) => (prevIndex + 1) % media.length);
-  }, [currentMediaIndex]);
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentMediaIndex((prevIndex) => (prevIndex + 1) % media.length);
+      setIsTransitioning(false);
+    }, 500); // Match this with CSS transition duration
+  }, [media.length]);
 
   // Mark a specific media item as loaded
   const handleMediaLoaded = (index) => {
-    setMediaLoaded((prev) => {
-      const newState = [...prev];
-      newState[index] = true;
-      return newState;
-    });
+    setMediaLoaded(prev => ({
+      ...prev,
+      [index]: true
+    }));
   };
 
+  // Preload the next two items
+  useEffect(() => {
+    const preloadIndices = [
+      (currentMediaIndex + 1) % media.length,
+      (currentMediaIndex + 2) % media.length
+    ];
+
+    preloadIndices.forEach(index => {
+      const item = media[index];
+      if (item.type === "video") {
+        // Preload poster image
+        if (item.poster) {
+          const img = new Image();
+          img.src = item.poster;
+        }
+        
+        // Preload video with a low priority
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'video';
+        link.href = item.src;
+        link.setAttribute('fetchpriority', 'low');
+        document.head.appendChild(link);
+        
+        // Clean up
+        return () => document.head.removeChild(link);
+      } else if (item.type === "image") {
+        const img = new Image();
+        img.src = item.src;
+      }
+    });
+  }, [currentMediaIndex, media]);
+
+  // Handle current media playback
   useEffect(() => {
     let timer;
-    const currentMedia = media[currentMediaIndex];
+    const currentItem = media[currentMediaIndex];
 
-    // Preload the next media item
-    const preloadNextIndex = (currentMediaIndex + 1) % media.length;
-    const preloadMedia = media[preloadNextIndex];
-    
-    if (preloadMedia.endsWith(".mp4")) {
-      const preloadVideo = document.createElement("video");
-      preloadVideo.src = preloadMedia;
-      preloadVideo.preload = "auto";
-      preloadVideo.muted = true;
-    } else {
-      const preloadImg = new Image();
-      preloadImg.src = preloadMedia;
-    }
+    if (currentItem.type === "video") {
+      const video = videoRefs.current[currentMediaIndex];
+      if (video) {
+        // Reset and play current video
+        video.currentTime = 0;
+        video.muted = true;
+        
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            console.warn("Autoplay prevented:", error);
+          });
+        }
 
-    if (currentMedia.endsWith(".mp4") && videoRef.current) {
-      const video = videoRef.current;
-      video.currentTime = 0;
-      video.play().catch((err) => console.warn("Autoplay blocked:", err));
-
-      const handleVideoEnd = () => nextMedia();
-      video.addEventListener("ended", handleVideoEnd);
-
-      return () => {
-        video.removeEventListener("ended", handleVideoEnd);
-      };
+        // Move to next media when video ends
+        const handleVideoEnd = () => nextMedia();
+        video.addEventListener("ended", handleVideoEnd);
+        return () => video.removeEventListener("ended", handleVideoEnd);
+      }
     } else {
       // For images, use a timeout
-      timer = setTimeout(() => {
-        nextMedia();
-      }, 5000);
+      timer = setTimeout(nextMedia, 5000);
+      return () => clearTimeout(timer);
     }
-
-    return () => clearTimeout(timer);
-  }, [currentMediaIndex, nextMedia]);
+  }, [currentMediaIndex, nextMedia, media]);
 
   return (
     <div className="relative h-screen w-full overflow-hidden bg-black">
-      {media.map((src, index) => (
+      <NavBar />  {/* Place NavBar here if you want it inside the Hero component */}
+      
+      {/* Media and hero content */}
+      {media.map((item, index) => (
         <div
           key={index}
-          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
-            index === currentMediaIndex ? "opacity-100" : "opacity-0 pointer-events-none"
+          className={`absolute inset-0 w-full h-full transition-opacity duration-500 ${
+            index === currentMediaIndex && !isTransitioning ? "opacity-100 z-1" : "opacity-0 z-0 pointer-events-none"
           }`}
-          style={{ 
-            zIndex: index === currentMediaIndex ? 1 : 0,
-            transitionProperty: "opacity",
-            transitionTimingFunction: "ease-in-out"
-          }}
         >
-          {src.endsWith(".mp4") ? (
+          {item.type === "video" ? (
             <video
-              key={`video-${index}`}
-              ref={index === currentMediaIndex ? videoRef : null}
-              src={src}
+              ref={el => setVideoRef(el, index)}
+              src={item.src}
+              poster={item.poster}
               autoPlay={index === currentMediaIndex}
               loop={false}
               muted
               playsInline
-              preload="auto"
+              preload={index === currentMediaIndex ? "auto" : "none"}
               className="w-full h-full object-cover"
               onLoadedData={() => handleMediaLoaded(index)}
-              style={{ opacity: mediaLoaded[index] ? 1 : 0, transition: "opacity 500ms ease-in-out" }}
+              style={{ 
+                opacity: mediaLoaded[index] ? 1 : 0, 
+                transition: "opacity 500ms ease-in-out" 
+              }}
             />
           ) : (
             <img
-              src={src}
+              src={item.src}
               alt="Hero Background"
               className="w-full h-full object-cover"
-              loading="eager"
+              loading={index <= 1 ? "eager" : "lazy"}
               onLoad={() => handleMediaLoaded(index)}
-              style={{ opacity: mediaLoaded[index] ? 1 : 0, transition: "opacity 500ms ease-in-out" }}
+              style={{ 
+                opacity: mediaLoaded[index] ? 1 : 0, 
+                transition: "opacity 500ms ease-in-out" 
+              }}
             />
           )}
         </div>

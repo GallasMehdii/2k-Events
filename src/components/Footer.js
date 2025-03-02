@@ -14,7 +14,7 @@ const Footer = () => {
                         <div className="p-6 border border-gray-700 rounded-xl shadow-lg w-full">
                             <h3 className="font-serif text-2xl text-white tracking-wide mb-2">Eternal Moments</h3>
                             <p className="text-gray-400 text-sm leading-relaxed">
-                            2k Events Dubai is a premier event management company based in the United Arab Emirates, offering top-notch services in wedding planning, decoration, and catering. Specializing in creating memorable events, they provide a wide range of tailored services for weddings, corporate functions, and private celebrations.
+                                2k Events Dubai is a premier event management company based in the United Arab Emirates, offering top-notch services in wedding planning, decoration, and catering. Specializing in creating memorable events, they provide a wide range of tailored services for weddings, corporate functions, and private celebrations.
                             </p>
                             <div className="mt-2">
                                 <p className="font-semibold text-sm">📞 (+971) 52 938 5968</p>
@@ -70,15 +70,10 @@ const Footer = () => {
                 <div className="mt-6 border-t border-gray-700 pt-4 flex flex-col md:flex-row justify-between items-center text-center gap-4">
                     <p className="text-gray-400 text-xs">© {new Date().getFullYear()} Eternal Moments. All rights reserved.</p>
                     <div className="flex gap-4">
-                        <Link to="#" className="text-gray-400 hover:text-white transition">
-                            <i className="fab fa-facebook text-xl"></i>
-                        </Link>
-                        <Link to="#" className="text-gray-400 hover:text-white transition">
+                        <Link to="https://www.instagram.com/2k.events/?hl=fr" target="_blank" className="text-gray-400 hover:text-white transition">
                             <i className="fab fa-instagram text-xl"></i>
                         </Link>
-                        <Link to="#" className="text-gray-400 hover:text-white transition">
-                            <i className="fab fa-twitter text-xl"></i>
-                        </Link>
+
                     </div>
                 </div>
             </div>

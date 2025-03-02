@@ -16,6 +16,8 @@ import DemoProduct from './pages/DemoProduct';
 import ScrollToTop from './components/ScrollToTop';
 import Services from './components/Services';
 import AroundWorld from './pages/AroundWorld';
+import Blog from './pages/Blog';
+import ServiceDetails from './components/ServiceDetail.js';
 
 function App() {
   useEffect(() => {
@@ -42,6 +44,9 @@ function App() {
             <Route path="/get-demo" element={<DemoProduct />} />
             <Route path='/services' element={<Services />} />
             <Route path='/AroundWorld' element={<AroundWorld />} />
+            <Route path='/blog' element={<Blog />} />
+            <Route path="/service/:id" element={<ServiceDetails />} /> {/* New dynamic route */}
+
 
           </Routes>
         </ScrollToTop>
