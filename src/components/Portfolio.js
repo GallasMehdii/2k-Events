@@ -40,7 +40,7 @@ const Portfolio = () => {
   // ];
 
   return (
-    <div className="relative min-h-screen bg-[#0a0a0a] text-white">
+    <div className="relative  bg-[#0a0a0a] text-white">
       {/* Header */}
       <div className="absolute top-0 left-0 right-0 p-8 text-center z-20">
         <h1 className="text-5xl font-thin tracking-widest mb-4">GLOBAL PRESENCE</h1>
