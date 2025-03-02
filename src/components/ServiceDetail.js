@@ -341,7 +341,7 @@ const ServiceDetail = () => {
     const openFullScreen = (photo) => {
         setSelectedPhoto(photo);
     };
-      const toggleVideoPlay = () => {
+    const toggleVideoPlay = () => {
         if (videoRef.current) {
             if (videoRef.current.paused) {
                 videoRef.current.play();
@@ -358,15 +358,15 @@ const ServiceDetail = () => {
     };
     const enterFullScreen = () => {
         if (videoRef.current) {
-            if (videoRef.current.requestFullscreen) {
-                videoRef.current.requestFullscreen();
-            } else if (videoRef.current.webkitRequestFullscreen) {
-                videoRef.current.webkitRequestFullscreen();
-            } else if (videoRef.current.msRequestFullscreen) {
-                videoRef.current.msRequestFullscreen();
-            }
+          if (videoRef.current.requestFullscreen) {
+            videoRef.current.requestFullscreen();
+          } else if (videoRef.current.webkitRequestFullscreen) { /* Safari */
+            videoRef.current.webkitRequestFullscreen();
+          } else if (videoRef.current.msRequestFullscreen) { /* IE11 */
+            videoRef.current.msRequestFullscreen();
+          }
         }
-    };
+      };
 
     if (loading || !service) {
         return (
@@ -402,22 +402,22 @@ const ServiceDetail = () => {
                                 <div className="px-6 pb-6">
                                     <div className="rounded-lg overflow-hidden shadow-inner relative" style={{ maxHeight: "500px" }}>
                                         <div className="aspect-w-16 aspect-h-9 bg-gray-100">
-                                        <video
-                                            ref={videoRef}
-                                            className="w-full h-auto max-h-[500px] sm:max-h-[400px] md:max-h-[500px] lg:max-h-[600px] object-contain"
-                                            poster={service.thumbnailImage || service.photos[0]}
-                                            onPlay={() => setIsVideoPlaying(true)}
-                                            onPause={() => setIsVideoPlaying(false)}
-                                            onClick={toggleVideoPlay}
-                                            playsInline
-                                        >
-                                            <source src={service.video} type="video/mp4" />
-                                            Your browser does not support the video tag.
-                                        </video>
-                                            
+                                            <video
+                                                ref={videoRef}
+                                                className="w-full h-auto max-h-[500px] sm:max-h-[400px] md:max-h-[500px] lg:max-h-[600px] object-contain"
+                                                poster={service.thumbnailImage || service.photos[0]}
+                                                onPlay={() => setIsVideoPlaying(true)}
+                                                onPause={() => setIsVideoPlaying(false)}
+                                                onClick={toggleVideoPlay}
+                                                playsInline
+                                            >
+                                                <source src={service.video} type="video/mp4" />
+                                                Your browser does not support the video tag.
+                                            </video>
+
                                             {/* Custom play button overlay */}
                                             {!isVideoPlaying && (
-                                                <div 
+                                                <div
                                                     className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center cursor-pointer"
                                                     onClick={toggleVideoPlay}
                                                 >
@@ -428,11 +428,11 @@ const ServiceDetail = () => {
                                                     </div>
                                                 </div>
                                             )}
-                                            
+
                                             {/* Custom video controls */}
                                             <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity">
                                                 <div className="flex items-center justify-between">
-                                                    <button 
+                                                    <button
                                                         className="w-10 h-10 rounded-full bg-white/20 backdrop-blur flex items-center justify-center text-white hover:bg-white/30 transition-colors"
                                                         onClick={toggleVideoPlay}
                                                     >
@@ -446,18 +446,14 @@ const ServiceDetail = () => {
                                                             </svg>
                                                         )}
                                                     </button>
-                                                    
+
                                                     <div className="text-white text-sm ml-3">
                                                         {service.title} showcase
                                                     </div>
-                                                    
-                                                    <button 
+
+                                                    <button
                                                         className="w-10 h-10 rounded-full bg-white/20 backdrop-blur flex items-center justify-center text-white hover:bg-white/30 transition-colors ml-auto"
-                                                        onClick={() => {
-                                                            if (videoRef.current) {
-                                                                videoRef.current.requestFullscreen();
-                                                            }
-                                                        }}
+                                                        onClick={enterFullScreen} // Use enterFullScreen instead of the inline fullscreen request
                                                     >
                                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                                             <path fillRule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 01-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 011.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 011.414-1.414L15 13.586V12a1 1 0 011-1z" clipRule="evenodd" />
@@ -478,7 +474,7 @@ const ServiceDetail = () => {
                             <h2 className="text-2xl font-semibold text-gray-800">Photo Gallery</h2>
                             <p className="text-gray-600 mt-2">Browse our collection of stunning photos from this service.</p>
                         </div>
-                        
+
                         {/* Masonry Photo Grid */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
                             {service.photos.map((photo, index) => (
@@ -543,10 +539,10 @@ const ServiceDetail = () => {
                                         />
                                     </div>
 
-                                   
+
                                     {/* Navigation controls */}
                                     <div className="absolute inset-x-0 top-1/2 transform -translate-y-1/2 flex justify-between px-4">
-                                        <button 
+                                        <button
                                             className="w-12 h-12 rounded-full bg-black/30 backdrop-blur flex items-center justify-center text-white hover:bg-black/50 transition-colors"
                                             onClick={(e) => {
                                                 e.stopPropagation();
@@ -559,7 +555,7 @@ const ServiceDetail = () => {
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                                             </svg>
                                         </button>
-                                        <button 
+                                        <button
                                             className="w-12 h-12 rounded-full bg-black/30 backdrop-blur flex items-center justify-center text-white hover:bg-black/50 transition-colors"
                                             onClick={(e) => {
                                                 e.stopPropagation();
@@ -575,7 +571,7 @@ const ServiceDetail = () => {
                                     </div>
 
                                     {/* Close button */}
-                                    <button 
+                                    <button
                                         className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/30 backdrop-blur flex items-center justify-center text-white hover:bg-black/50 transition-colors"
                                         onClick={closeFullScreen}
                                     >
@@ -592,7 +588,7 @@ const ServiceDetail = () => {
                             </div>
                         )}
                     </div>
-                        
+
                 </div>
             </div>
             <Footer />
