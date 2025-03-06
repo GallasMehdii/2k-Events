@@ -327,28 +327,26 @@ const Services = () => {
 
     return (
         <div id="services" className="my-3 py-0">
-
-
             {/* Services Header */}
-            <h2 className="my-5 text-center text-4xl text-gray-800 font-serif">
-                Our Professional Services
+            <h2 className="my-16 text-center text-5xl text-gray-900 font-serif tracking-tight">
+                Our Prestigious Services
             </h2>
             <div className="flex justify-center">
-                <div className="w-24 border-b-4 border-gray-400"></div>
+                <div className="w-36 border-b-8 border-gray-500 transform transition-all duration-700 hover:scale-110"></div>
             </div>
 
             {/* Luxury Event Type Filter */}
-            <div className="flex justify-center mt-8">
-                <div className="bg-white shadow-lg rounded-xl border border-gray-100 p-4 max-w-2xl w-full mx-4">
-                    <div className="flex flex-col sm:flex-row sm:space-x-4 w-full space-y-2 sm:space-y-0">
+            <div className="flex justify-center mt-16">
+                <div className="bg-white shadow-lg rounded-xl border border-gray-100 p-6 max-w-2xl w-full mx-4 transform transition-all duration-700 hover:scale-105">
+                    <div className="flex flex-col sm:flex-row sm:space-x-6 w-full space-y-4 sm:space-y-0">
                         <button
                             onClick={() => {
                                 setActiveType('wedding');
                                 setActiveCategory('all');
                             }}
-                            className={`flex-1 px-6 py-3 rounded-lg font-serif text-md tracking-wide transition-all duration-300 ${activeType === 'wedding'
-                                ? 'bg-black text-white shadow-xl'
-                                : 'bg-white text-black hover:bg-[#F5F5F5] hover:shadow-md'}`}
+                            className={`flex-1 px-8 py-5 rounded-lg font-serif text-xl tracking-wide transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/50 ${activeType === 'wedding'
+                                ? 'bg-gray-800 text-white shadow-2xl scale-105'
+                                : 'bg-white text-gray-800 hover:bg-[#F1F1F1]'}`}
                         >
                             Weddings
                         </button>
@@ -357,15 +355,16 @@ const Services = () => {
                                 setActiveType('corporate');
                                 setActiveCategory('all');
                             }}
-                            className={`flex-1 px-6 py-3 rounded-lg font-serif text-md tracking-wide transition-all duration-300 ${activeType === 'corporate'
-                                ? 'bg-black text-white shadow-xl'
-                                : 'bg-white text-black hover:bg-[#F5F5F5] hover:shadow-md'}`}
+                            className={`flex-1 px-8 py-5 rounded-lg font-serif text-xl tracking-wide transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/50 ${activeType === 'corporate'
+                                ? 'bg-gray-800 text-white shadow-2xl scale-105'
+                                : 'bg-white text-gray-800 hover:bg-[#F1F1F1]'}`}
                         >
                             Corporate Events
                         </button>
                     </div>
                 </div>
             </div>
+
 
             {/* Services Cards Section */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-12">

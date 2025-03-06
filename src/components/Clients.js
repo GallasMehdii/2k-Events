@@ -61,26 +61,6 @@ const Clients = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {[
-            { icon: PartyPopper, title: "Unmatched Attention to Detail", text: "Every detail crafted with precision for unforgettable moments." },
-            { icon: WandSparkles, title: "Innovative Design", text: "Blending sophistication and function to transform experiences." },
-            { icon: Diamond, title: "Timeless Elegance", text: "Classic designs that stand the test of time." },
-            { icon: Star, title: "Unforgettable Memories", text: "Creating cherished memories with every event." }
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="relative bg-white p-8 rounded-xl shadow-lg border border-gray-200 transform transition-all duration-500 hover:shadow-2xl hover:scale-110 hover:rotate-2 hover:-translate-y-2 text-center animate-fadeIn overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-cover bg-center opacity-40 pointer-events-none"></div>
-              <div className="flex justify-center mb-6">
-                <item.icon className="w-14 h-14 text-[#C19A6B] transition-transform duration-500" />
-              </div>
-              <h3 className="font-serif text-2xl text-gray-800 font-semibold mb-3 relative">{item.title}</h3>
-              <p className="text-gray-700 font-medium leading-relaxed relative">{item.text}</p>
-            </div>
-          ))}
-        </div>
       </div>
       <div className="container mx-auto text-center">
         <motion.h2

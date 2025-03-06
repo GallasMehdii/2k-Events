@@ -16,10 +16,6 @@ const Hero = () => {
 
   const media = [
     {
-      src: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto/v1739218950/jungle-1_npxmvf.png",
-      type: "image"
-    },
-    {
       src: "https://res.cloudinary.com/dx5y2bzdq/video/upload/q_auto,f_auto,c_limit/v1740500376/2k_7_wfzxh4.mp4",
       type: "video",
       poster: "https://res.cloudinary.com/dx5y2bzdq/video/upload/q_auto,f_auto,c_limit,so_0/v1740500376/2k_7_wfzxh4.jpg"
@@ -224,7 +220,7 @@ const Hero = () => {
               to="/AroundWorld"
               className="relative px-10 py-4 bg-gradient-to-r from-gray-600 to-white-900 text-white font-semibold rounded-full transition-all duration-500 ease-in-out transform hover:scale-110 hover:shadow-lg hover:from-gray-600 hover:to-gray-800 animate-in"
             >
-              About Our Agency
+              About Us
             </Link>
           </div>
         </div>

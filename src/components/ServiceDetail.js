@@ -358,15 +358,17 @@ const ServiceDetail = () => {
     };
     const enterFullScreen = () => {
         if (videoRef.current) {
-          if (videoRef.current.requestFullscreen) {
-            videoRef.current.requestFullscreen();
-          } else if (videoRef.current.webkitRequestFullscreen) { /* Safari */
-            videoRef.current.webkitRequestFullscreen();
-          } else if (videoRef.current.msRequestFullscreen) { /* IE11 */
-            videoRef.current.msRequestFullscreen();
-          }
+            if (videoRef.current.requestFullscreen) {
+                videoRef.current.requestFullscreen();
+            } else if (videoRef.current.mozRequestFullScreen) { // Firefox
+                videoRef.current.mozRequestFullScreen();
+            } else if (videoRef.current.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+                videoRef.current.webkitRequestFullscreen();
+            } else if (videoRef.current.msRequestFullscreen) { // IE/Edge
+                videoRef.current.msRequestFullscreen();
+            }
         }
-      };
+    };
 
     if (loading || !service) {
         return (
@@ -406,8 +408,14 @@ const ServiceDetail = () => {
                                                 ref={videoRef}
                                                 className="w-full h-auto max-h-[500px] sm:max-h-[400px] md:max-h-[500px] lg:max-h-[600px] object-contain"
                                                 poster={service.thumbnailImage || service.photos[0]}
-                                                onPlay={() => setIsVideoPlaying(true)}
-                                                onPause={() => setIsVideoPlaying(false)}
+                                                onPlay={() => {
+                                                    setIsVideoPlaying(true);
+                                                    // Automatically enter full screen on mobile devices when the video starts playing
+                                                    if (window.innerWidth <= 768) { // Check if the device is mobile
+                                                        enterFullScreen();
+                                                    }
+                                                }}
+                                                 onPause={() => setIsVideoPlaying(false)}
                                                 onClick={toggleVideoPlay}
                                                 playsInline
                                             >

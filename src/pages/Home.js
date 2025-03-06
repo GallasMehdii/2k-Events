@@ -36,9 +36,9 @@ const Home = () => {
             ) : (
                 <>
                     <Hero />
-                    <Intro />
                     <Services />
                     <Portfolio />
+                    <Intro />
                     <Clients />
                     <Cta />
                     <Footer />
