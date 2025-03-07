@@ -20,10 +20,12 @@ const Contact = () => {
     const [venue, setVenue] = useState('');
     const [eventType, setEventType] = useState('');
     const [errors, setErrors] = useState([]);
+    const [agency, setAgency] = useState('');
+
 
     useEffect(() => {
-        window.scrollTo({top: 0, left: 0, behavior: 'smooth' });
-      }, []);
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }, []);
 
 
     // Event types and functions remain the same...
@@ -48,14 +50,16 @@ const Contact = () => {
         setSelectedDate(null);
         setGuestsNumber('');
         setVenue('');
+        setAgency('');
+
         setEventType('');
     };
     const validateForm = () => {
         const newErrors = {};
-    
+
         if (!firstName.trim()) {
             newErrors.first_name = 'First name is required';
-            Notiflix.Notify.failure('First name is required', { 
+            Notiflix.Notify.failure('First name is required', {
                 position: 'right-top',
                 distance: '30px',
                 fontSize: '18px',
@@ -69,10 +73,10 @@ const Contact = () => {
             setErrors(newErrors);
             return false; // Stop after the first error
         }
-    
+
         if (!lastName.trim()) {
             newErrors.last_name = 'Last name is required';
-            Notiflix.Notify.failure('Last name is required', { 
+            Notiflix.Notify.failure('Last name is required', {
                 position: 'right-top',
                 distance: '30px',
                 fontSize: '18px',
@@ -86,10 +90,10 @@ const Contact = () => {
             setErrors(newErrors);
             return false; // Stop after the first error
         }
-    
+
         if (!email.trim()) {
             newErrors.email = 'Email is required';
-            Notiflix.Notify.failure('Email is required', { 
+            Notiflix.Notify.failure('Email is required', {
                 position: 'right-top',
                 distance: '30px',
                 fontSize: '18px',
@@ -103,10 +107,10 @@ const Contact = () => {
             setErrors(newErrors);
             return false; // Stop after the first error
         }
-    
+
         if (!phone.trim()) {
             newErrors.phone_number = 'Phone number is required';
-            Notiflix.Notify.failure('Phone number is required', { 
+            Notiflix.Notify.failure('Phone number is required', {
                 position: 'right-top',
                 distance: '30px',
                 fontSize: '18px',
@@ -120,10 +124,10 @@ const Contact = () => {
             setErrors(newErrors);
             return false; // Stop after the first error
         }
-    
+
         if (!message.trim()) {
             newErrors.message = 'Message is required';
-            Notiflix.Notify.failure('Message is required', { 
+            Notiflix.Notify.failure('Message is required', {
                 position: 'right-top',
                 distance: '30px',
                 fontSize: '18px',
@@ -137,10 +141,10 @@ const Contact = () => {
             setErrors(newErrors);
             return false; // Stop after the first error
         }
-    
+
         if (!selectedDate) {
             newErrors.date = 'Event date is required';
-            Notiflix.Notify.failure('Event date is required', { 
+            Notiflix.Notify.failure('Event date is required', {
                 position: 'right-top',
                 distance: '30px',
                 fontSize: '18px',
@@ -154,10 +158,10 @@ const Contact = () => {
             setErrors(newErrors);
             return false; // Stop after the first error
         }
-    
+
         if (!guestsNumber.trim()) {
             newErrors.guests_number = 'Number of guests is required';
-            Notiflix.Notify.failure('Number of guests is required', { 
+            Notiflix.Notify.failure('Number of guests is required', {
                 position: 'right-top',
                 distance: '30px',
                 fontSize: '18px',
@@ -171,10 +175,10 @@ const Contact = () => {
             setErrors(newErrors);
             return false; // Stop after the first error
         }
-    
+
         if (!venue.trim()) {
             newErrors.venue = 'Venue details are required';
-            Notiflix.Notify.failure('Venue details are required', { 
+            Notiflix.Notify.failure('Venue details are required', {
                 position: 'right-top',
                 distance: '30px',
                 fontSize: '18px',
@@ -188,10 +192,26 @@ const Contact = () => {
             setErrors(newErrors);
             return false; // Stop after the first error
         }
-    
+        if (!agency) {
+            newErrors.agency = 'Agency selection is required';
+            Notiflix.Notify.failure('Agency selection is required', {
+                position: 'right-top',
+                distance: '30px',
+                fontSize: '18px',
+                width: '400px',
+                cssAnimationStyle: 'zoom',
+                cssAnimationDuration: 400,
+                timeout: 3000,
+                useIcon: true,
+                borderRadius: '12px',
+            });
+            setErrors(newErrors);
+            return false;
+        }
+
         if (!eventType) {
             newErrors.event_type = 'Event type is required';
-            Notiflix.Notify.failure('Event type is required', { 
+            Notiflix.Notify.failure('Event type is required', {
                 position: 'right-top',
                 distance: '30px',
                 fontSize: '18px',
@@ -205,7 +225,7 @@ const Contact = () => {
             setErrors(newErrors);
             return false; // Stop after the first error
         }
-    
+
         setErrors(newErrors);
         return true; // If no errors, return true
     };
@@ -380,6 +400,53 @@ const Contact = () => {
                                                 />
                                                 {errors.venue && <p className="mt-1 text-red-500 text-sm">{errors.venue}</p>}
                                             </div>
+                                        </div>
+                                        {/* Agency Select Buttons */}
+                                        <div className="mt-8">
+                                            <label className="block text-sm font-medium text-gray-700 mb-4">Select Agency</label>
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                                <div
+                                                    className={`flex items-center p-6 rounded-xl border cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 ${agency === "2k Dubai"
+                                                            ? "border-gray-300 bg-white text-black hover:border-black hover:shadow-md"
+                                                            : "border-gray-300 bg-white text-black hover:border-black hover:shadow-md"
+                                                        }`}
+                                                    onClick={() => setAgency("2k Dubai")}
+                                                >
+                                                    <input
+                                                        id="2k-dubai"
+                                                        name="agency"s
+                                                        type="radio"
+                                                        value="2k Dubai"
+                                                        checked={agency === "2k Dubai"}
+                                                        onChange={() => setAgency("2k Dubai")}
+                                                        className="h-5 w-5 text-black border-gray-300 focus:ring-black"
+                                                    />
+                                                    <label htmlFor="2k-dubai" className="ml-4 block text-l font-medium cursor-pointer">
+                                                     2K Dubai
+                                                    </label>
+                                                </div>
+                                                <div
+                                                    className={`flex items-center p-6 rounded-xl border cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 ${agency === "2k Tunisie"
+                                                            ? "border-gray-300 bg-white text-black hover:border-black hover:shadow-md"
+                                                            : "border-gray-300 bg-white text-black hover:border-black hover:shadow-md"
+                                                        }`}
+                                                    onClick={() => setAgency("2k Tunisie")}
+                                                >
+                                                    <input
+                                                        id="2k-tunisie"
+                                                        name="agency"
+                                                        type="radio"
+                                                        value="2k Tunisie"
+                                                        checked={agency === "2k Tunisie"}
+                                                        onChange={() => setAgency("2k Tunisie")}
+                                                        className="h-5 w-5 text-black border-gray-300 focus:ring-black"
+                                                    />
+                                                    <label htmlFor="2k-tunisie" className="ml-4 block text-l font-medium cursor-pointer">
+                                                        2K Tunisie
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            {errors.agency && <p className="mt-2 text-red-500 text-sm">{errors.agency}</p>}
                                         </div>
                                     </div>
 

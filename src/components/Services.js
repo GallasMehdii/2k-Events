@@ -328,7 +328,7 @@ const Services = () => {
     return (
         <div id="services" className="my-3 py-0">
             {/* Services Header */}
-            <h2 className="my-16 text-center text-5xl text-gray-900 font-serif tracking-tight">
+            <h2 className="my-4 text-center text-5xl text-gray-900 font-serif tracking-tight">
                 Our Prestigious Services
             </h2>
             <div className="flex justify-center">

@@ -7,7 +7,7 @@ import { FaInstagram } from 'react-icons/fa'; // Use react-icons for better cont
 const Footer = () => {
     return (
         <footer className="bg-black text-white py-12">
-            <div className="max-w-7xl mx-auto px-6 md:px-12">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
 
                     {/* Brand Block */}
@@ -17,7 +17,7 @@ const Footer = () => {
                             <Link
                                 to="https://www.instagram.com/2k.events/?hl=fr"
                                 target="_blank"
-                                className="absolute right-4 text-gray-400 hover:text-white transition-transform transform hover:scale-110"
+                                className="absolute right-4 top-4 text-gray-400 hover:text-white transition-transform transform hover:scale-110"
                             >
                                 <FaInstagram size={36} />
                             </Link>
@@ -33,8 +33,6 @@ const Footer = () => {
                                 <p className="text-sm">✉️ info@eternalmoments.com</p>
                             </div>
                         </div>
-
-
                     </div>
 
                     {/* Quick Links */}
@@ -82,7 +80,6 @@ const Footer = () => {
                 {/* Bottom Section - Social & Copyright */}
                 <div className="mt-8 border-t border-gray-700 pt-6 flex flex-col-reverse md:flex-row items-center justify-between gap-6">
                     <p className="text-gray-400 text-xs md:text-sm">© {new Date().getFullYear()} Eternal Moments. All rights reserved.</p>
-
                 </div>
             </div>
         </footer>
