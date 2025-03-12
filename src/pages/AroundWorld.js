@@ -84,8 +84,8 @@ const AroundWorld = () => {
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-16">About Us</h2>
           <p className="text-lg max-w-3xl mx-auto mb-8">
-            2K Events Group is a premier wedding and event planning agency in Dubai, specializing in luxury weddings and exclusive events.
-            With over 25 years of combined experience, we transform visions into spectacular reality with creativity and precision.
+            2K Events Group is a premier wedding and event planning agency in Dubai and Tunis, specializing in luxury weddings and exclusive events.
+            With over 10 years of combined experience, we transform visions into spectacular reality with creativity and precision.
           </p>
         </div>
       </section>

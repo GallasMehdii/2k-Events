@@ -24,7 +24,7 @@ const Footer = () => {
 
                             <h3 className="font-serif text-3xl text-white tracking-wide mb-4">Eternal Moments</h3>
                             <p className="text-gray-400 text-sm leading-relaxed">
-                                2k Events Dubai is a premier event management company based in the United Arab Emirates, offering top-notch services in wedding planning, decoration, and catering. Specializing in creating memorable events, they provide a wide range of tailored services for weddings, corporate functions, and private celebrations.
+                                2k Events Dubai is a premier event management company based in the United Arab Emirates and Tunisia, offering top-notch services in wedding planning, decoration, and catering. Specializing in creating memorable events, they provide a wide range of tailored services for weddings, corporate functions, and private celebrations.
                             </p>
 
                             <div className="mt-4 space-y-1">

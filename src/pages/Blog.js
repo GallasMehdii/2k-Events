@@ -7,13 +7,12 @@ const Blog = () => {
 
   const blogPosts = [
     {
-      title: "Curating the Extraordinary: Essential Planning Tips for Your Luxury Wedding Experience",
+      title: "Curating the Extraordinary: Essential Planning Tips for Your Luxury Wedding Experience✨",
       content: `
         2K Event has proudly orchestrated the most memorable and extravagant weddings in Dubai. Our signature events showcase meticulous attention to detail and an unwavering commitment to excellence, transforming ordinary celebrations into extraordinary experiences.
 
-        Timing is perhaps the most valuable currency in luxury wedding planning. We recommend securing your premier venue and most sought-after vendors at least 12-18 months in advance. This foresight not only ensures availability but provides ample time for creating custom elements that reflect your personal narrative and aesthetic sensibilities.
+        Timing is perhaps the most valuable currency in luxury wedding planning.
 
-        For couples seeking the pinnacle of wedding experiences, consider incorporating rare and unexpected elements—private string quartets performing contemporary arrangements, custom fragrance development to scent your celebration spaces, or commissioned artistic installations that serve as both décor and lasting mementos of your exceptional day.
       `,
       image: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741562517/VOGUE_uhw2cb.png",
       imageWidth: 727,
@@ -23,17 +22,32 @@ const Blog = () => {
       tags: ["Luxury Planning", "Wedding Design", "Elite Venues"]
     },
     {
-      title: "The Hauteur of Celebration: 2025's Most Coveted Wedding Décor Concepts",
-      content: `
-        As we embrace the sophisticated aesthetics of 2025, the realm of luxury wedding décor is experiencing a renaissance of artistic expression and technical innovation. This season transcends fleeting trends, instead establishing new paradigms of elegance that will influence celebration design for years to come.
-
-        Tablescapes now function as tactile galleries, where guests experience layers of sensory details through custom-developed linens featuring hand-embroidered elements, place settings that incorporate multiple metals in proprietary finishes, and statement chargers commissioned from celebrated ceramic artists. Each element contributes to an overarching textural narrative that complements your celebration's architectural context.
-
-        The paradigm has shifted from decoration to curation—every element thoughtfully selected and positioned to contribute to a cohesive design narrative that feels both timeless and unmistakably contemporary.
+      "title": "✨ Raving Reviews from Our Happy Clients ✨",
+      "content": `
+        Nothing speaks louder than the joy of our clients! 💕 From breathtaking designs to unforgettable experiences, your words inspire us to keep crafting magic. ✨
       `,
-      image: "https://res.cloudinary.com/dx5y2bzdq/image/upload/v1741562515/Lebanese_Weddings_Maaloul_u4gwwv.png",
+      "image": "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741562515/Lebanese_Weddings_Maaloul_u4gwwv.png",
+      "author": "Elite Weddings",
+      "date": "March 11, 2025",
+      "tags": ["Client Love", "5-Star Reviews", "Luxury Experience"]
+    },
+
+    {
+      title: "Selected one of the best 15 breathtaking venues for a fairytale wedding in the UAE",
+      content: `
+A Fairytale Wedding with 2K Event Step into a world of elegance and romance with 2K Event at one of the UAE’s most breathtaking venues, where every detail is crafted for a magical and unforgettable celebration.      `,
+      image: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741733526/blo_au1wpu.jpg",
       author: "Jonathan Winters",
-      
+      date: "February 10, 2025",
+      tags: ["Décor Trends", "Luxury Design", "Avant-garde Aesthetics"]
+    },
+    {
+      title: "Selected one of the best 15 breathtaking venues for a fairytale wedding in the UAE",
+      content: `
+A Fairytale Wedding with 2K Event Step into a world of elegance and romance with 2K Event at one of the UAE’s most breathtaking venues, where every detail is crafted for a magical and unforgettable celebration.      `,
+      image: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741734040/a_xsaxuj.jpg",
+      author: "Jonathan Winters", imageWidth: 527,
+      imageHeight: 609,
       date: "February 10, 2025",
       tags: ["Décor Trends", "Luxury Design", "Avant-garde Aesthetics"]
     },
@@ -58,15 +72,49 @@ const Blog = () => {
     <div className="min-h-screen bg-stone-50 text-stone-900">
       <NavBar />
 
-      {/* Blog Hero Section */}
-      <section className="relative bg-cover bg-center h-[500px] flex items-center justify-center" style={{ backgroundImage: 'url(/images/luxury-wedding-hero.jpg)' }}>
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative z-10 p-12 text-center max-w-3xl py">
-          <h1 className="text-6xl font-serif font-light tracking-wide mb-6 text-white ">The Art of Exceptional Celebrations</h1>
-          <div className="w-24 h-0.5 bg-gold mx-auto mb-6"></div>
-          <p className="text-xl text-white font-light leading-relaxed">
-            Immerse yourself in a curated exploration of luxury wedding design, planning expertise, and avant-garde celebration concepts for the discerning couple.
-          </p>
+      <section
+        className="relative w-full overflow-hidden"
+        aria-label="Luxury Wedding Planning and Design Services"
+      >
+        {/* SEO-optimized hero section with schema markup */}
+        <div
+          className="bg-cover bg-center min-h-[600px] md:min-h-[700px] lg:min-h-[800px] w-full flex items-center justify-center"
+          style={{ backgroundImage: 'url(https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741611439/pic4_uq7vvg.jpg)' }}
+          role="img"
+          aria-label="Exquisite luxury wedding venue decoration"
+        >
+          {/* Enhanced overlay with luxury-focused gradient */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/75"></div>
+
+          {/* SEO-enhanced content container */}
+          <div className="relative z-10 px-4 sm:px-6 md:px-8 py-12 md:py-16 lg:py-20 text-center max-w-4xl mx-auto">
+            {/* Decorative element with semantic meaning */}
+            <div className="flex items-center justify-center mb-8">
+              <div className="w-12 h-px bg-gold"></div>
+              <span className="mx-4 text-gold text-xs tracking-[0.3em] uppercase font-light">Elite Wedding Planners</span>
+              <div className="w-12 h-px bg-gold"></div>
+            </div>
+
+            {/* H1 with strategic keyword placement */}
+            <h1 className="font-serif font-light text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wide leading-tight text-white mb-8">
+              <span className="block">Luxury Wedding Design</span>
+              <span className="block italic mt-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl">For Discerning Couples</span>
+            </h1>
+
+            {/* Elegant divider */}
+            <div className="w-16 sm:w-24 h-px bg-gold mx-auto mb-8" aria-hidden="true"></div>
+
+          </div>
+        </div>
+
+        {/* Decorative elements enhancing luxury feel */}
+        <div className="absolute top-8 left-8 w-24 h-24 border-l border-t border-gold/30 hidden lg:block" aria-hidden="true"></div>
+        <div className="absolute bottom-8 right-8 w-24 h-24 border-r border-b border-gold/30 hidden lg:block" aria-hidden="true"></div>
+
+        {/* Hidden semantic rich text for SEO */}
+        <div className="sr-only">
+          <h2>Premier Luxury Wedding Planning and Design Services</h2>
+          <p>Specializing in high-end wedding experiences for elite clientele in destination venues worldwide. Full-service luxury wedding planning, design, and coordination for sophisticated celebrations.</p>
         </div>
       </section>
 

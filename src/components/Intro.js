@@ -112,7 +112,7 @@ const Intro = () => {
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     {/* Section Title */}
     <div className="text-center mb-12">
-      <h2 className="text-4xl  text-gray-900 tracking-tight font-sans italic ">
+      <h2 className="text-4xl  text-gray-900 tracking-tight font-serif italic ">
         Our Last Project
       </h2>
     </div>

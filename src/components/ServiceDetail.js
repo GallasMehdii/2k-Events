@@ -12,6 +12,8 @@ const ServiceDetail = () => {
     const [selectedPhoto, setSelectedPhoto] = useState(null); // Track the selected photo for full-screen view
     const [isVideoPlaying, setIsVideoPlaying] = useState(false); // Track video play state
     const videoRef = useRef(null);
+    const [selectedVideoIndex, setSelectedVideoIndex] = useState(0);
+
 
 
     useEffect(() => {
@@ -27,7 +29,9 @@ const ServiceDetail = () => {
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740484917/DSC03547_e5toei.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740484899/IMG_5789_m32okx.jpg",
                 ],
-                video: "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740692085/singapore_1_rdvr8u.mp4",
+                video: ["https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740692085/singapore_1_rdvr8u.mp4",
+                    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741562250/singapore_2_scnowd.mp4"
+                ],
                 description: "Urban elegance meets timeless luxury in our iconic Singapore-inspired celebration settings."
             },
             {
@@ -42,8 +46,27 @@ const ServiceDetail = () => {
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350616/6U2A6499_wo7l8f.jpg"
                 ],
                 thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350711/6U2A6506_vjbtve.jpg",
+                video: "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741785006/jungle_pdtly1.mov",
                 type: "wedding",
                 category: "jungle",
+                description: "Bold tropical elegance merges with refined sophistication in our captivating jungle-inspired designs."
+            },
+            {
+                id: "Butterfly",
+                title: "Butterfly",
+                photos: [
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741781012/Butterfly_makrem_four_sesonss0_lciiua.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741781013/Butterfly_makrem_four_sesons2_olmw0b.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741781013/Butterfly_makrem_four_sesonsi0_zj8v3s.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741781015/Butterfly_makrem_four_sesonsz1_uytafn.jpg",
+
+                ],
+                thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741781012/Butterfly_makrem_four_sesonss0_lciiua.jpg",
+                video: ["https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741781023/Butterfly_makrem_four_seasons_vtmax8.mp4",
+                    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741781033/Butterfly_makrem_four_sesons_lic6r7.mp4"
+                ],
+                type: "wedding",
+                category: "Butterfly",
                 description: "Bold tropical elegance merges with refined sophistication in our captivating jungle-inspired designs."
             },
             {
@@ -57,13 +80,38 @@ const ServiceDetail = () => {
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741611439/pic4_uq7vvg.jpg",
                 ],
                 thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741611440/pic5_inxg94.jpg",
-                video: "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741611305/decor_2_xezkyj.mp4",
+                video: ["https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741611305/decor_2_xezkyj.mp4",
+                    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741562494/reeel_couple_gj7eam.mp4",
+                    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741783813/reception_msa5vo.mp4"
+                ],
 
                 type: "wedding",
                 category: "GrassLand",
                 description: "Sophisticated interplay of light and shadow creating dramatic ambiance and unforgettable moments."
 
             },
+            {
+                id: "Blue-Dream",
+                title: "Blue-Dream",
+                photos: [
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741739539/096A6636_sq1ajs.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741739538/096A6545_qm7iol.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741739533/096A5200_nffknf.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741739532/096A4430_upjaqb.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741739532/096A4461_ivl1zs.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741739532/096A5214_aogbib.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741739534/096A3961_mtxcmx.jpg",
+                ],
+                video: ["https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741783565/Blue_Dream_khawla_1_fhmoio.mp4",
+                    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741783610/Blue_Dream_wedding_khawla_2_fkpogn.mp4"
+                ],
+
+                thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741739534/096A3961_mtxcmx.jpg",
+                type: "wedding",
+                category: "Blue Dream",
+                description: "A timeless celebration of tradition and grandeur, where heritage and romance shine in perfect harmony."
+            },
+
             {
                 id: "Sol & Luna",
                 title: "Sol & Luna",
@@ -92,10 +140,19 @@ const ServiceDetail = () => {
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740239854/096A5586_wurt3g.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483899/096A5784_hjchor.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483899/096A5722_xnwe1m.jpg",
-                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483899/096A5762_zpbska.jpg"
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483899/096A5762_zpbska.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741783875/Shakouch_Image_Camelia_flower13_scywlx.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741783873/Tamer_Image_Camelia_flower136_wh67bh.jpg",
+
 
                 ],
-                video: "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740578059/decoration_tamer_hosni_fgwofx.mp4",
+                video: ["https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740578059/decoration_tamer_hosni_fgwofx.mp4",
+                    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741784046/Camelia_flower_tamerhosni_iznccd.mp4",
+                    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741784028/Camellia_TAMER_xxq9d4.mp4",
+                    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741783995/Camelia_flower_Shakouch_t4nzoh.mp4",
+                    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741783813/reception_msa5vo.mp4",
+
+                ],
                 thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740239854/096A5586_wurt3g.jpg",
                 type: "wedding",
                 category: "full-service",
@@ -113,7 +170,13 @@ const ServiceDetail = () => {
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350915/_86A7357_gyin82.jpg",
                 ],
                 thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350918/DSC01682_kw1vf7.jpg",
-                video: "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740763125/burjelarab_f10smw.mp4",
+                video: ["https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740763125/burjelarab_f10smw.mp4",
+                    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740351005/burjelarab_dtwiai.mp4",
+                    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741784789/burj_elarabb_1_jd6gzv.mp4",
+                    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741784772/burj_el_arab_2_fh7vsd.mov",
+                    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741784699/burj_el_arab_3_kdzvyb.mp4"
+
+                ],
                 type: "wedding",
                 category: "reflection",
                 description: "Mirrored elements create an illusion of endless elegance, amplifying the magic of your celebration."
@@ -134,7 +197,9 @@ const ServiceDetail = () => {
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740348769/DSC08033_rmj5wk.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740348762/DSC08297_frlcim.jpg"
                 ],
-                video: "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740762992/bvlgari_qgfej2.mp4",
+                video: ["https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740762992/bvlgari_qgfej2.mp4",
+                    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740691205/bvlgari_2_apukn9.mp4"
+                ],
                 thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740348769/DSC08033_rmj5wk.jpg",
                 type: "wedding",
                 category: "bvlgari",
@@ -201,7 +266,9 @@ const ServiceDetail = () => {
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740154766/1-7_w2jdfb.jpg"
                 ],
                 thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740155051/1-9_t4rwpc.jpg",
-                video: "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740692225/JARDIN_D_EDEN_omnefq.mp4",
+                video: ["https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740692225/JARDIN_D_EDEN_omnefq.mp4",
+                    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741785066/Jardin_Romain_ox9shj.mp4"
+                ],
                 type: "wedding",
                 category: "mosaique",
                 description: "Classical Roman aesthetics reimagined with contemporary sensibilities for a timeless celebration."
@@ -231,7 +298,10 @@ const ServiceDetail = () => {
 
                 ],
                 thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740352399/--11_oll416.jpg",
-                video: "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740763886/1reel_meddeb_2k_lgbbhg.mp4",
+                video: ["https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741610957/Vid_3_mjwx2i.mov",
+                    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741610922/Vid_2_ewyage.mov",
+                    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741785131/Valley_flower_deco_222_meddeb_reel_zgxtbw.mov"
+                ],
                 type: "wedding",
                 category: "valleyflower",
                 description: "Sweeping floral landscapes creating a captivating valley of blooms for your extraordinary day."
@@ -269,15 +339,50 @@ const ServiceDetail = () => {
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483922/-99__aogrbz.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740759870/image00011_dfkiqf.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740759881/image00010_lrefgz.jpg",
-                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740759881/image00012_lao4kf.jpg"
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740759881/image00012_lao4kf.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741562101/545461_xm6css.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741562103/545464_o1dshk.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741562104/1-756_uockpu.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741562109/545467_u3wzgl.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/v1741784279/Jardin_d_eden_2_xvh3ch.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/v1741784277/Jardin_d_eden1_giapnn.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/v1741784275/Jardin_d_eden_3_el4wsw.jpg"
 
                 ],
                 thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483922/-112__dnpw4p.jpg",
                 video: "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740764169/videeooo_ez8gb1.mp4",
-
                 type: "wedding",
                 category: "eden",
                 description: "Sophisticated interplay of light and shadow creating dramatic ambiance and unforgettable moments."
+
+            },
+            {
+                id: "porsche-event",
+                title: "Porshe Event",
+                photos: [
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800:v1741779867/184-sur-355_bqysac.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800:v1741779867/290-sur-355_l5fk2q.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741779867/11-sur-355_-_1_cxkczv.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741779868/201-sur-355_q4pad4.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741779869/4-sur-355_ypzyer.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741779871/323-sur-355_-_2_oykjij.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741779871/134-sur-355_etciph.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741779872/20-sur-355_mo4pwa.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741779875/28-sur-355_cjon9m.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741779872/325-sur-355_pdk3td.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741779875/225-sur-355_m59gxl.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741779876/94-sur-355_bwbarv.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741779876/26-sur-355_-_1_f3n9br.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741779876/30-sur-355_rdc1ob.jpg",
+
+                ],
+                thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740435837/34-sur-355_zmstii.jpg",
+                type: "corporate",
+                video : ["https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741780060/Porsche_2_uszo3r.mp4",
+                    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741780836/Porsche_1_h07j71.mp4"
+                ],
+                category: "porsche-event",
+                description: "Precision engineering meets exceptional design in our automotive-inspired corporate experiences."
 
             },
             {
@@ -308,8 +413,8 @@ const ServiceDetail = () => {
 
             },
             {
-                id: "white-rose",
-                title: "White Rose",
+                id: "Golden Minaret",
+                title: "Golden Minaret",
                 photos: [
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740490589/IMG-20250225-WA0010_m0jqtr.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740490588/IMG-20250225-WA0018_eyjt4p.jpg",
@@ -332,27 +437,36 @@ const ServiceDetail = () => {
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741565153/10_mxwmfr.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741565152/12_ecotbz.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741565151/11_piirrm.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741784335/Morrocco3_rbtdcv.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741784338/Morrocooo_hb0tcr.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741784345/Morroco1_wnm5ba.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741784342/Morrocoo0_nnl7to.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741784346/Morrocoo40_nmiovw.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741784348/Morrocoo0240_mwcxjh.jpg"
+
                 ],
                 thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740490590/IMG-20250225-WA0012_xlf08o.jpg",
-                video: "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740762495/Morroco_zwhm2u.mp4",
+                video: ["https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740762495/Morroco_zwhm2u.mp4",
+                    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741784449/Morocco_gopro_1_sg12ht.mp4",
+                    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741784387/Drone_jbesy3.mp4",
+                ],
                 type: "wedding",
                 category: "White Rose",
-                description: "Sweeping floral landscapes creating a captivating valley of blooms for your extraordinary day."
+                description: "A timeless celebration of tradition and grandeur, where heritage and romance shine in perfect harmony."
 
 
             },
             {
-                id: "butterfly",
-
-                title: "Butterfly",
+                id: "Jullana",
+                title: "Jullana",
                 photos: [
-                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740840670/dolce_hkhhuo.png"
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741736136/j2_e5j1cv.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741736136/j_f1m8ow.jpg"
                 ],
-                thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740840670/dolce_hkhhuo.png",
-                video: "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740693664/makrem_four_sesons_kydexo.mp4",
-                type: "wedding",
-                category: "Butterfly",
-                description: "Sweeping floral landscapes creating a captivating valley of blooms for your extraordinary day."
+                video: "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741562354/jullanar_qo7mmu.mp4",
+                type: "corporate",
+                category: "Jullana",
+                description: "Precision engineering meets exceptional design in our automotive-inspired corporate experiences."
 
             },
             {
@@ -387,7 +501,9 @@ const ServiceDetail = () => {
         const foundService = services.find(service => service.id === id);
 
         if (foundService) {
-            setService(foundService);
+            // Process the service data before setting it in state
+            const processedService = processServiceData(foundService);
+            setService(processedService);
             setLoading(false);
         } else {
             // Handle not found
@@ -395,14 +511,66 @@ const ServiceDetail = () => {
         }
     }, [id, navigate]);
 
+    useEffect(() => {
+        if (videoRef.current && service.videos && service.videos.length > 0) {
+            // Reset video when selected video changes
+            videoRef.current.load();
+            setIsVideoPlaying(false);
+        }
+    }, [selectedVideoIndex, service]);
+
     const openFullScreen = (photo) => {
+        // Pause video if it's playing when opening a photo
+        if (videoRef.current && isVideoPlaying) {
+            // Small delay to prevent interruption errors
+            setTimeout(() => {
+                if (videoRef.current) {
+                    videoRef.current.pause();
+                    setIsVideoPlaying(false);
+                }
+            }, 50);
+        }
         setSelectedPhoto(photo);
     };
+
+    const processServiceData = (serviceData) => {
+        const processed = { ...serviceData };
+
+        // Initialize videos array if it doesn't exist
+        if (!processed.videos) {
+            processed.videos = [];
+        }
+
+        // Handle case where video is a string
+        if (typeof processed.video === 'string' && processed.videos.length === 0) {
+            processed.videos = [processed.video];
+        }
+
+        // Handle case where video is already an array
+        if (Array.isArray(processed.video) && processed.videos.length === 0) {
+            processed.videos = [...processed.video];
+        }
+
+        return processed;
+    };
+
     const toggleVideoPlay = () => {
-        if (videoRef.current) {
-            if (videoRef.current.paused) {
-                videoRef.current.play();
-                setIsVideoPlaying(true);
+        if (videoRef.current && service.videos && service.videos.length > 0) {
+            // Use a flag to prevent rapid play/pause calls
+            if (!isVideoPlaying) {
+                // Add a small delay to prevent interruption errors
+                setTimeout(() => {
+                    if (videoRef.current) {
+                        videoRef.current.play()
+                            .then(() => {
+                                setIsVideoPlaying(true);
+                            })
+                            .catch(err => {
+                                console.error("Video play error:", err);
+                                setIsVideoPlaying(false);
+                            });
+                    }
+                }, 50);
             } else {
                 videoRef.current.pause();
                 setIsVideoPlaying(false);
@@ -444,22 +612,38 @@ const ServiceDetail = () => {
             <div className="bg-gradient-to-b from-gray-50 to-white pt-16 pb-24">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Service Header */}
-                    <div className="text-center mb-12">
-                        <h1 className="font-serif text-4xl md:text-5xl text-gray-800 font-bold mb-6">{service.title}</h1>
+                    <div className="text-center mb-12 pt-12 md:pt-20"> {/* Responsive padding */}
+                        <h1 className="text-4xl md:text-5xl text-gray-800 font-serif italic mb-6">{service.title}</h1>
                         <p className="text-xl max-w-3xl mx-auto text-gray-600 font-medium">{service.description}</p>
                         <div className="h-px w-28 bg-gray-400 mx-auto mt-8"></div>
                     </div>
 
-                    {/* Video Section - Redesigned for better appearance */}
-                    {service.video && (
+
+                    {service.videos && service.videos.length > 0 ? (
                         <div className="mb-12">
                             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
                                 <div className="p-6 pb-3">
-                                    <h3 className="text-2xl font-semibold text-gray-800 mb-2">{service.title} Video</h3>
-                                    <p className="text-gray-600">Experience the elegance and detail of our {service.title} theme in motion.</p>
+                                    <h3 className="text-2xl font-serif italic text-gray-800 mb-2">{service.title} Videos</h3>
+                                    <p className="text-gray-600">
+                                        Experience the elegance and detail of our {service.title} theme in motion.
+                                        {service.videos.length > 1 && (
+                                            <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                                {service.videos.length} Videos Available
+                                            </span>
+                                        )}
+                                    </p>
                                 </div>
+
+                                {/* Video Player with indicators */}
                                 <div className="px-6 pb-6">
                                     <div className="rounded-lg overflow-hidden shadow-inner relative" style={{ maxHeight: "500px" }}>
+                                        {/* Video counter indicator - Only show if multiple videos */}
+                                        {service.videos.length > 1 && (
+                                            <div className="absolute top-4 right-4 z-10 bg-black bg-opacity-70 text-white text-xs font-medium px-2 py-1 rounded-full">
+                                                Video {selectedVideoIndex + 1} of {service.videos.length}
+                                            </div>
+                                        )}
+
                                         <div className="aspect-w-16 aspect-h-9 bg-gray-100">
                                             <video
                                                 ref={videoRef}
@@ -467,71 +651,89 @@ const ServiceDetail = () => {
                                                 poster={service.thumbnailImage || service.photos[0]}
                                                 onPlay={() => {
                                                     setIsVideoPlaying(true);
-                                                    // Automatically enter full screen on mobile devices when the video starts playing
-                                                    if (window.innerWidth <= 768) { // Check if the device is mobile
+                                                    if (window.innerWidth <= 768) {
                                                         enterFullScreen();
                                                     }
                                                 }}
                                                 onPause={() => setIsVideoPlaying(false)}
                                                 onClick={toggleVideoPlay}
                                                 playsInline
+                                                loading="lazy"  // Lazy load the video
+
                                             >
-                                                <source src={service.video} type="video/mp4" />
+                                                <source src={service.videos[selectedVideoIndex]} type="video/mp4" />
                                                 Your browser does not support the video tag.
                                             </video>
 
-                                            {/* Custom play button overlay */}
+                                            {/* Enhanced play button overlay */}
                                             {!isVideoPlaying && (
                                                 <div
                                                     className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center cursor-pointer"
                                                     onClick={toggleVideoPlay}
                                                 >
-                                                    <div className="w-16 h-16 bg-white bg-opacity-80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg transform transition-transform hover:scale-110">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-900" viewBox="0 0 20 20" fill="currentColor">
+                                                    <div className="relative">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-white opacity-80" viewBox="0 0 20 20" fill="currentColor">
                                                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                                                         </svg>
+
+                                                        {/* Video number indicator inside play button */}
+                                                        {service.videos.length > 1 && (
+                                                            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-90 text-black text-xs font-bold px-3 py-1 rounded-full">
+                                                                {selectedVideoIndex + 1}/{service.videos.length}
+                                                            </div>
+                                                        )}
                                                     </div>
                                                 </div>
                                             )}
-
-                                            {/* Custom video controls */}
-                                            <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity">
-                                                <div className="flex items-center justify-between">
-                                                    <button
-                                                        className="w-10 h-10 rounded-full bg-white/20 backdrop-blur flex items-center justify-center text-white hover:bg-white/30 transition-colors"
-                                                        onClick={toggleVideoPlay}
-                                                    >
-                                                        {isVideoPlaying ? (
-                                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd" />
-                                                            </svg>
-                                                        ) : (
-                                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                                                            </svg>
-                                                        )}
-                                                    </button>
-
-                                                    <div className="text-white text-sm ml-3">
-                                                        {service.title} showcase
-                                                    </div>
-
-                                                    <button
-                                                        className="w-10 h-10 rounded-full bg-white/20 backdrop-blur flex items-center justify-center text-white hover:bg-white/30 transition-colors ml-auto"
-                                                        onClick={enterFullScreen} // Use enterFullScreen instead of the inline fullscreen request
-                                                    >
-                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                            <path fillRule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 01-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 011.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 011.414-1.414L15 13.586V12a1 1 0 011-1z" clipRule="evenodd" />
-                                                        </svg>
-                                                    </button>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
+
+                                    {/* Improved Video Selector - Visual indicator of multiple videos */}
+                                    {service.videos.length > 1 && (
+                                        <>
+                                            <div className="mt-4 flex items-center justify-between">
+                                                <h4 className="text-sm font-medium text-gray-700">Select Video</h4>
+                                                <span className="text-xs text-gray-500">{service.videos.length} videos available</span>
+                                            </div>
+                                            <div className="mt-2 flex items-center space-x-3 overflow-x-auto py-2">
+                                                {service?.videos?.map((video, index) => (
+                                                    <button
+                                                        key={index}
+                                                        onClick={() => {
+                                                            // Pause current video if playing
+                                                            if (videoRef.current && isVideoPlaying) {
+                                                                videoRef.current.pause();
+                                                                setIsVideoPlaying(false);
+                                                            }
+                                                            setSelectedVideoIndex(index);
+                                                        }}
+                                                        className={`relative min-w-[120px] h-16 rounded-lg overflow-hidden border-2 transition-all ${selectedVideoIndex === index
+                                                            ? 'border-blue-500 shadow-md'
+                                                            : 'border-gray-200 hover:border-gray-300'
+                                                            }`}
+                                                    >
+                                                        <div className="flex flex-col items-center bg-gray-900 bg-opacity-40 backdrop-blur-md shadow-md rounded-lg p-2 border border-gray-600 w-auto max-w-[120px] sm:max-w-[140px]">
+                                                            <span className="text-white text-xs sm:text-sm font-medium tracking-wide">
+                                                                Video {index + 1}
+                                                            </span>
+                                                            {selectedVideoIndex === index && (
+                                                                <span className="text-white text-[10px] sm:text-xs mt-1 bg-gray-700 px-2 py-0.5 rounded-full shadow-md animate-pulse">
+                                                                    🎬 Playing
+                                                                </span>
+                                                            )}
+                                                        </div>
+
+
+                                                    </button>
+                                                ))}
+                                            </div>
+                                        </>
+                                    )}
                                 </div>
                             </div>
                         </div>
-                    )}
+                    ) : null}
+
 
                     {/* Main Content Area - Photo Gallery */}
                     <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
@@ -542,7 +744,7 @@ const ServiceDetail = () => {
 
                         {/* Masonry Photo Grid */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
-                            {service.photos.map((photo, index) => (
+                            {service?.photos?.map((photo, index) => (
                                 <div
                                     key={index}
                                     className="group relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-1"
