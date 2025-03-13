@@ -22,6 +22,7 @@ const ServiceDetail = () => {
                 id: "singapore",
                 title: "Singapour",
                 photos: [
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741828934/BEFORE-SINGAPOUR_v8clvw.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740484900/DSC03495_e8qbuw.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740484904/DSC03536_yjfi4x.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740484901/DSC03506_mcroc7.jpg",
@@ -29,6 +30,7 @@ const ServiceDetail = () => {
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740484917/DSC03547_e5toei.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740484899/IMG_5789_m32okx.jpg",
                 ],
+                thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740484900/DSC03495_e8qbuw.jpg",
                 video: ["https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740692085/singapore_1_rdvr8u.mp4",
                     "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741562250/singapore_2_scnowd.mp4"
                 ],
@@ -38,6 +40,7 @@ const ServiceDetail = () => {
                 id: "luxury-jungle",
                 title: "Luxury Jungle",
                 photos: [
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741828940/BEFORE-JUNGLE_tljfx9.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350711/6U2A6506_vjbtve.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350708/6U2A6331_mwnj4t.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800//v1740485067/6U2A6336_jnttus.jpg",
@@ -46,7 +49,7 @@ const ServiceDetail = () => {
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350616/6U2A6499_wo7l8f.jpg"
                 ],
                 thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350711/6U2A6506_vjbtve.jpg",
-                video: "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741785006/jungle_pdtly1.mov",
+                video: "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741829693/jungle_vofikn.mp4",
                 type: "wedding",
                 category: "jungle",
                 description: "Bold tropical elegance merges with refined sophistication in our captivating jungle-inspired designs."
@@ -55,6 +58,7 @@ const ServiceDetail = () => {
                 id: "Butterfly",
                 title: "Butterfly",
                 photos: [
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741828933/BEFORE-BUTTERFLY_hfcck3.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741781012/Butterfly_makrem_four_sesonss0_lciiua.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741781013/Butterfly_makrem_four_sesons2_olmw0b.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741781013/Butterfly_makrem_four_sesonsi0_zj8v3s.jpg",
@@ -94,6 +98,7 @@ const ServiceDetail = () => {
                 id: "Blue-Dream",
                 title: "Blue-Dream",
                 photos: [
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741828938/BEFORE-BLUE-DREAM_x9sfrh.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741739539/096A6636_sq1ajs.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741739538/096A6545_qm7iol.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741739533/096A5200_nffknf.jpg",
@@ -116,6 +121,7 @@ const ServiceDetail = () => {
                 id: "Sol & Luna",
                 title: "Sol & Luna",
                 photos: [
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741828936/BEFORE-SOL-AND-LUNA_qqonwh.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741565155/sol_edmu3w.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741565144/sol3_ya8lat.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741565144/sol5_jh0cfh.jpg",
@@ -133,6 +139,7 @@ const ServiceDetail = () => {
                 id: "camellia-flower",
                 title: "Camellia  Flower",
                 photos: [
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741828933/BEFORE-CAMELIA-FLOWER_yourd4.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740239961/096A5602_chdi7e.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740239954/096A5577_j4x39o.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740239953/096A5622_zsrg84.jpg",
@@ -163,6 +170,7 @@ const ServiceDetail = () => {
                 id: "reflection",
                 title: "Reflection",
                 photos: [
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741828933/BEFORE-REFLECTION_vjaje2.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350918/DSC01682_kw1vf7.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350915/DSC01545_znanob.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350903/DSC01713_t49xsp.jpg",
@@ -170,7 +178,7 @@ const ServiceDetail = () => {
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350915/_86A7357_gyin82.jpg",
                 ],
                 thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740350918/DSC01682_kw1vf7.jpg",
-                video: ["https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740763125/burjelarab_f10smw.mp4",
+                video: [
                     "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740351005/burjelarab_dtwiai.mp4",
                     "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741784789/burj_elarabb_1_jd6gzv.mp4",
                     "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741784772/burj_el_arab_2_fh7vsd.mov",
@@ -186,6 +194,7 @@ const ServiceDetail = () => {
                 id: "bvlgari",
                 title: "Bvlgari",
                 photos: [
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741828933/BEFORE-BVLGARY_yuprxc.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740348917/DSC09512_ppodvj.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740348887/DSC07995_bfohzx.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740348885/DSC07946_tll1uh.jpg",
@@ -256,6 +265,7 @@ const ServiceDetail = () => {
                 id: "les-jardins-romains",
                 title: "Les Jardins Romains",
                 photos: [
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741828937/BEFORE-JARDIN-ROMAIN_qgokm0.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740155051/1-9_t4rwpc.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740155035/1-2_ev59ii.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740155020/1-3_brr4gk.jpg",
@@ -279,6 +289,7 @@ const ServiceDetail = () => {
 
                 title: "Valley Flower",
                 photos: [
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741828937/BEFORE-VALLEY-FOWER_ou4cjp.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740352397/--3_ysa7yi.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740352395/DSC09415_krsd2e.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740352364/--42_rkvyxa.jpg",
@@ -286,15 +297,10 @@ const ServiceDetail = () => {
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740352344/--13_pslwnf.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740352343/--27_yhbqht.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740352292/--10_ndru9g.jpg",
-                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741565151/4_vghoxn.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741565150/5_rnvwqn.jpg",
-                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741565149/3_fdf5gf.jpg",
-                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741565150/2_d3sobm.jpg",
-                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741565149/4_x4g718.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741563100/4_oardf6.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741563100/3_pnacbt.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741563100/5_ojns9f.jpg",
-                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741563100/2_ms5zul.jpg",
 
                 ],
                 thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740352399/--11_oll416.jpg",
@@ -313,6 +319,7 @@ const ServiceDetail = () => {
                 id: "shade",
                 title: "Shade",
                 photos: [
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741828936/BEFORE-SHADE_kc976u.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740351496/526A1032_afr90p.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740351476/526A1058_lhh4ny.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740351476/526A1067_jg3pep.jpg",
@@ -329,6 +336,7 @@ const ServiceDetail = () => {
                 id: "eden-garden",
                 title: "Eden Garden",
                 photos: [
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741828937/BEFORE-EDEN-GARDEN_bcufdq.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483928/-103__i3cc5e.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483928/-114__amu7uf.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740483926/-107__aut7jy.jpg",
@@ -360,8 +368,8 @@ const ServiceDetail = () => {
                 id: "porsche-event",
                 title: "Porshe Event",
                 photos: [
-                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800:v1741779867/184-sur-355_bqysac.jpg",
-                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800:v1741779867/290-sur-355_l5fk2q.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741779867/184-sur-355_bqysac.jpg",
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741779867/290-sur-355_l5fk2q.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741779867/11-sur-355_-_1_cxkczv.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741779868/201-sur-355_q4pad4.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741779869/4-sur-355_ypzyer.jpg",
@@ -378,7 +386,7 @@ const ServiceDetail = () => {
                 ],
                 thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740435837/34-sur-355_zmstii.jpg",
                 type: "corporate",
-                video : ["https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741780060/Porsche_2_uszo3r.mp4",
+                video: ["https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741780060/Porsche_2_uszo3r.mp4",
                     "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741780836/Porsche_1_h07j71.mp4"
                 ],
                 category: "porsche-event",
@@ -416,6 +424,7 @@ const ServiceDetail = () => {
                 id: "Golden Minaret",
                 title: "Golden Minaret",
                 photos: [
+                    "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1741828938/BEFORE-MOROCCO_dogago.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740490589/IMG-20250225-WA0010_m0jqtr.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740490588/IMG-20250225-WA0018_eyjt4p.jpg",
                     "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740490588/IMG-20250225-WA0019_ozaika.jpg",
@@ -446,7 +455,8 @@ const ServiceDetail = () => {
 
                 ],
                 thumbnailImage: "https://res.cloudinary.com/dx5y2bzdq/image/upload/f_auto,q_auto,w_800/v1740490590/IMG-20250225-WA0012_xlf08o.jpg",
-                video: ["https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740762495/Morroco_zwhm2u.mp4",
+                video: [
+                    "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1740762495/Morroco_zwhm2u.mp4",
                     "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741784449/Morocco_gopro_1_sg12ht.mp4",
                     "https://res.cloudinary.com/dx5y2bzdq/video/upload/v1741784387/Drone_jbesy3.mp4",
                 ],
